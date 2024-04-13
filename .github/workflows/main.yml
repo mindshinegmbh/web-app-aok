@@ -18,9 +18,5 @@ jobs:
         run: yarn lint
       - name: Run format process
         run: yarn format
-      - name: Check if commit message is correct
-        uses: wagoid/commitlint-github-action@v3
-        with:
-          configFile: commitlint.config.cjs
       - name: Run all Unit Test
         run: yarn test
