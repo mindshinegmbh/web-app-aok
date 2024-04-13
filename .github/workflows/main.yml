@@ -1,7 +1,6 @@
-
 name: CI/CD Pipline
-on: 
-  push: 
+on:
+  push:
   pull_request:
 jobs:
   build-lint-test-deploy:
@@ -13,8 +12,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "21.x"
-      - name: Install all dependencies     
+      - name: Install all dependencies
         run: yarn install
       - name: Run Unit Test
-        run: yarn test  
-      
+        run: yarn test
