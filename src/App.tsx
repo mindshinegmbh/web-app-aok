@@ -18,7 +18,7 @@ function App() {
         >
           Learn React
         </a>
-        <p>Dooa</p>
+        <p>Dooa Ansari</p>
       </header>
     </div>
   );
