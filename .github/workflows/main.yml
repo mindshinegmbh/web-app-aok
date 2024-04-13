@@ -23,7 +23,6 @@ jobs:
       - name: Run E2E Cypress
         uses: cypress-io/github-action@v6
         with:
-          working-directory: client
           build: yarn run build
           start: yarn run start
           wait-on: http://localhost:3000
