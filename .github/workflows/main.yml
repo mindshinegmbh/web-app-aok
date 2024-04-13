@@ -4,10 +4,10 @@ on:
   push: 
   pull_request:
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Build
         uses: actions/checkout@v2
       - name: Setup NodeJs
         uses: actions/setup-node@v1
@@ -15,3 +15,14 @@ jobs:
           node-version: "21.x"
       - name: Install server dependencies     
         run: yarn install
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Unit Test
+        uses: actions/checkout@v2
+      - name: Setup NodeJs
+        uses: actions/setup-node@v1
+        with:
+          node-version: "21.x"
+      - name: Run Unit Test
+        run: yarn test
