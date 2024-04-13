@@ -1,4 +1,4 @@
-it("sums numbers", () => {
+it('sums numbers', () => {
   let a = 3;
   let b = 4;
   expect(a).toEqual(3);

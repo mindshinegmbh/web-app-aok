@@ -21,7 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint src/**/*",
+    "lint:fix": "eslint --fix src/**/*",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,html}'"
   },
   "eslintConfig": {
     "extends": [
