@@ -32,6 +32,12 @@ jobs:
     needs: [build]
     environment: staging
     steps:
+      - name: Build
+        uses: actions/checkout@v4
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.x'
       - name: Build for Staging
         run: |
           unset CI
