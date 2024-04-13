@@ -18,7 +18,7 @@ function App() {
         >
           Learn React
         </a>
-        <a>Dooa</a>
+        <p>Dooa</p>
       </header>
     </div>
   );
