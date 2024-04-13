@@ -35,7 +35,7 @@ jobs:
       - name: Build for Staging
         run: |
           unset CI
-          cd spacebar/spacebar
+          cd web-app-aok
           yarn build
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
