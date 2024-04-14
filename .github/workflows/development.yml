@@ -1,17 +1,11 @@
 name: CI/CD Pipline General
 on:
   push:
-    branches:
-      - '*'
-      - '*/*'
-      - '**'
+    branches-ignore:
       - '!master'
       - '!staging'
   pull_request:
-    branches:
-      - '*'
-      - '*/*'
-      - '**'
+    branches-ignore:
       - '!master'
       - '!staging'
 jobs:
@@ -32,7 +26,7 @@ jobs:
       - name: Run format process
         run: yarn format
       - name: Run all Unit Test
-        run: yarn test
+        run: yarn test --coverage
       - name: Run E2E Cypress
         uses: cypress-io/github-action@v6
         with:
