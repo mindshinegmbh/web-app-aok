@@ -1,4 +1,4 @@
-name: CI/CD Pipline
+name: CI/CD Pipline For Staging
 on:
   push:
     branches: [staging]
