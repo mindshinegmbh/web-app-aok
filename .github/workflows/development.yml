@@ -1,0 +1,41 @@
+name: CI/CD Pipline General
+on:
+  push:
+    branches:
+      - '*'
+      - '*/*'
+      - '**'
+      - '!master'
+      - '!staging'
+  pull_request:
+    branches:
+      - '*'
+      - '*/*'
+      - '**'
+      - '!master'
+      - '!staging'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: Build
+        uses: actions/checkout@v4
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.x'
+      - name: Install all dependencies
+        run: yarn install
+      - name: Run lint process
+        run: yarn lint
+      - name: Run format process
+        run: yarn format
+      - name: Run all Unit Test
+        run: yarn test
+      - name: Run E2E Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          build: yarn run build
+          start: yarn run start
+          wait-on: http://localhost:3000
