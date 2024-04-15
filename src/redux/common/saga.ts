@@ -1,4 +1,4 @@
-import { put, takeEvery, all, call } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 
 export const delay = (ms: any) => new Promise((res) => setTimeout(res, ms));
 

@@ -1,4 +1,4 @@
-import { all, fork, takeLatest } from 'redux-saga/effects';
+import { all, takeLatest } from 'redux-saga/effects';
 import { callAlert } from './common/saga';
 
 const rootSaga = function* () {
