@@ -13,10 +13,9 @@ function App() {
     <>
       <Router>
         <ThemeContext.Provider value={getThemeObjectAgaisntString(theme)}>
-          <div style={{ height: '100%' }}>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              {/* <Route
+          <Routes>
+            <Route path='/' element={<Home />} />
+            {/* <Route
 							path="/properties"
 							element={<PropertiesPage />}
 						/>
@@ -27,8 +26,7 @@ function App() {
 							element={<ActivatePage />}
 						/>
 						<Route path="*" element={<NotFound />} /> */}
-            </Routes>
-          </div>
+          </Routes>
         </ThemeContext.Provider>
       </Router>
     </>
