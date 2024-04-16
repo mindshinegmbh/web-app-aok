@@ -20,7 +20,7 @@ export function setupStore() {
   return store;
 }
 
-export const store = setupStore({});
+export const store = setupStore();
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;

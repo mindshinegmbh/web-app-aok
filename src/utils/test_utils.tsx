@@ -19,7 +19,7 @@ export function renderWithProviders(
 ) {
   const {
     preloadedState = {},
-    store = setupStore(preloadedState),
+    store = setupStore(),
     ...renderOptions
   } = extendedRenderOptions;
 
