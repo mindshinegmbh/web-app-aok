@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from 'pages/home'
+import { ThemeContext } from './styling/themes';
+import { useAppSelector } from './redux/hooks';
+import { SelectTheme } from './redux/theme/selectors';
+import { getThemeObjectAgaisntString } from './utils/general_utils';
 
 function App() {
+  const theme = useAppSelector(SelectTheme);
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-        <p>Dooa Ansari 12</p>
-      </header>
-    </div>
+    <>
+      <Router>
+        <ThemeContext.Provider value={getThemeObjectAgaisntString(theme)}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            {/* <Route
+							path="/properties"
+							element={<PropertiesPage />}
+						/>
+						<Route path="/login" element={<LoginPage />} />
+						<Route path="/register" element={<RegisterPage />} />
+						<Route
+							path="/activate/:uid/:token"
+							element={<ActivatePage />}
+						/>
+						<Route path="*" element={<NotFound />} /> */}
+          </Routes>
+        </ThemeContext.Provider>
+      </Router>
+    </>
   );
 }
 

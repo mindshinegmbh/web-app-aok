@@ -1,6 +1,6 @@
-describe('My First Test', () => {
-  it('Visits the Kitchen Sink', () => {
+describe('Back Button', () => {
+  it('Contains Back button', () => {
     cy.visit('http://localhost:3000/');
-    cy.contains('Dooa');
+    cy.contains('Züruk');
   });
 });
