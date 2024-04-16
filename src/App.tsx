@@ -5,7 +5,6 @@ import { ThemeContext } from './styling/themes';
 import { useAppSelector } from './redux/hooks';
 import { SelectTheme } from './redux/theme/selectors';
 import { getThemeObjectAgaisntString } from './utils/general_utils';
-import { Background } from './styling/common';
 
 function App() {
   const theme = useAppSelector(SelectTheme);

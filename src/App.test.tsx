@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import App from './App';
 import { setupStore } from './redux/store';
 import { addI18nResources, renderWithProviders } from './utils/test_utils';

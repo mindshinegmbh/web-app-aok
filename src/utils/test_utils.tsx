@@ -33,7 +33,7 @@ export function renderWithProviders(
   };
 }
 
-export function initI18n(translations = {}) {
+export function initI18n() {
   i18n.use(initReactI18next).init({
     lng: 'de',
     fallbackLng: 'de',

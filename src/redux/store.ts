@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   theme: themeReducer,
 });
 
-export function setupStore(preloadedState?: Partial<RootState>) {
+export function setupStore() {
   const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
