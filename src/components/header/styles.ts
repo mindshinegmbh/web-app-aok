@@ -7,8 +7,6 @@ const HeaderParent = styled.div`
   justify-content: space-between;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid #bf4f74;
-  border-radius: 3px;
 `;
 
 export { HeaderParent };

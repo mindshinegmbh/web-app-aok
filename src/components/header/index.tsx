@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 import Themes, { DARK, ThemeContext } from '../../styling/themes';
 import { useAppDispatch } from '../../redux/hooks';
 import { setTheme } from '../../redux/theme';
+import Icon from '../icon';
+import { BackParent } from '../back/styles';
+import Back from '../back';
 
 export interface HeaderProps {
   isSettingsVisible: boolean;
@@ -23,8 +26,8 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
 
   return (
     <HeaderParent>
-      <RegularText $textColor={currentTheme.settings_text_color}>{t('header.back')}</RegularText>
-      <div>Settings</div>
+      <Back />
+      <Icon link={currentTheme.icons.settings} />
     </HeaderParent>
   );
 };

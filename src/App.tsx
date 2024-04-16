@@ -1,23 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
-import Themes, { LIGHT, ThemeContext } from './styling/themes';
+import { ThemeContext } from './styling/themes';
 import { useAppSelector } from './redux/hooks';
-import { RootState } from './redux/store';
 import { SelectTheme } from './redux/theme/selectors';
 import { getThemeObjectAgaisntString } from './utils/general_utils';
+import { Background } from './styling/common';
 
 function App() {
   const theme = useAppSelector(SelectTheme);
-  console.log(theme);
-  //const dispatch = useAppDispatch();
   return (
     <>
       <Router>
         <ThemeContext.Provider value={getThemeObjectAgaisntString(theme)}>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            {/* <Route
+          <div style={{ height: '100%' }}>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              {/* <Route
 							path="/properties"
 							element={<PropertiesPage />}
 						/>
@@ -28,7 +27,8 @@ function App() {
 							element={<ActivatePage />}
 						/>
 						<Route path="*" element={<NotFound />} /> */}
-          </Routes>
+            </Routes>
+          </div>
         </ThemeContext.Provider>
       </Router>
     </>
