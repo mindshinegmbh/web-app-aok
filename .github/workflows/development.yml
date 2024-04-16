@@ -18,7 +18,9 @@ jobs:
       - name: Setup NodeJs
         uses: actions/setup-node@v4
         with:
-          node-version: '21.x'
+          node-version: '20.12.2'
+      - name: Clear all dependencies
+        run: yarn cache clean
       - name: Install all dependencies
         run: yarn install
       - name: Run lint process
