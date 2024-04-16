@@ -1,19 +1,19 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import createSagaMiddleware from '@redux-saga/core';
 import commonReducer from './common';
+import themeReducer from './theme';
 import sagas from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
   common: commonReducer,
+  theme: themeReducer,
 });
 
 export function setupStore(preloadedState?: Partial<RootState>) {
   const store = configureStore({
-    reducer: {
-      common: commonReducer,
-    },
+    reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
   });
   sagaMiddleware.run(sagas);

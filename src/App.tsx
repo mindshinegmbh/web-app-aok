@@ -1,12 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/home';
+import Themes, { LIGHT, ThemeContext } from './styling/themes';
+import { useAppSelector } from './redux/hooks';
+import { RootState } from './redux/store';
+import { SelectTheme } from './redux/theme/selectors';
+import { getThemeObjectAgaisntString } from './utils/general_utils';
 
 function App() {
+  const theme = useAppSelector(SelectTheme);
+  console.log(theme);
+  //const dispatch = useAppDispatch();
   return (
     <>
       <Router>
-        <main className='py-3'>
+        <ThemeContext.Provider value={getThemeObjectAgaisntString(theme)}>
           <Routes>
             <Route path='/' element={<Home />} />
             {/* <Route
@@ -21,7 +29,7 @@ function App() {
 						/>
 						<Route path="*" element={<NotFound />} /> */}
           </Routes>
-        </main>
+        </ThemeContext.Provider>
       </Router>
     </>
   );
