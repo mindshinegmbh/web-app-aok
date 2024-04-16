@@ -17,7 +17,7 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
     //     dispatch(setTheme(DARK))
     //  }, 5000)
     console.log(isSettingsVisible)
-  }, []);
+  }, );
 
   return (
     <HeaderParent>
