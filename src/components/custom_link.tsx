@@ -11,7 +11,7 @@ const CustomLink = ({ href, link, hide = false }: CustomLinkProps) => {
   if (hide) return null;
   return (
     <CustomATag href={href}>
-      <RegularIcon src={link} />
+      <RegularIcon alt="settings link" src={link} />
     </CustomATag>
   );
 };

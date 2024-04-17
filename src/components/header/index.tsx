@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { HeaderParent } from './styles';
 import { ThemeContext } from '../../styling/themes';
 import Back from '../back';
-import CustomLink from 'components/CustomLink';
+import CustomLink from 'components/custom_link';
 
 export interface HeaderProps {
   isSettingsVisible: boolean;

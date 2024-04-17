@@ -19,7 +19,7 @@ const Back = () => {
      {...linkProps}
       href='/settings'
     >
-      <Icon link={currentTheme.icons.back} />
+      <Icon alt="back button" link={currentTheme.icons.back} />
       <RegularText $textColor={currentTheme.colors.settings_text_color}>
         {t('header.back')}
       </RegularText>
