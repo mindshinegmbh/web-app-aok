@@ -11,6 +11,7 @@ describe('Settings page', () => {
     cy.visit('http://localhost:3000/');
     cy.contains('Züruk').click()
     cy.url().should('include', '/settings')
+    //cy.get('[data-test-id="view-templete-heading"]',{withinSubject:null})
     // cy.get('[data-testid="settings_link"]').should('be.visible')
     // cy.get('[data-cy=settings_link]').should('not.exists')
 
