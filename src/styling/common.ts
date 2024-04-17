@@ -19,4 +19,9 @@ const RegularIcon = styled.img`
   object-fit: contain;
 `;
 
-export { RegularText, RegularIcon, Background };
+
+const CustomATag = styled.a`
+   text-decoration: none;
+`;
+
+export { RegularText, RegularIcon, Background , CustomATag };

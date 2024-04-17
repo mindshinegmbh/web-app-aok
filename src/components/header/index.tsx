@@ -3,6 +3,7 @@ import { HeaderParent } from './styles';
 import  {ThemeContext } from '../../styling/themes';
 import Icon from '../icon';
 import Back from '../back';
+import CustomLink from 'components/CustomLink';
 
 export interface HeaderProps {
   isSettingsVisible: boolean;
@@ -22,8 +23,9 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
   return (
     <HeaderParent>
       <Back />
-      <Icon link={currentTheme.icons.settings} />
-    </HeaderParent>
+      {isSettingsVisible && <CustomLink link={currentTheme.icons.settings} href={"/settings"}/>
+}
+          </HeaderParent>
   );
 };
 
