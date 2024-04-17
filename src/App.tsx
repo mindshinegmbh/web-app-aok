@@ -19,13 +19,6 @@ function App() {
 							path="/settings"
 							element={<Settings />}
 						/>
-						{/* <Route path="/login" element={<LoginPage />} /> */}
-						{/* <Route path="/register" element={<RegisterPage />} />
-						<Route
-							path="/activate/:uid/:token"
-							element={<ActivatePage />}
-						/>
-						<Route path="*" element={<NotFound />} /> */}
           </Routes>
         </ThemeContext.Provider>
       </Router>

@@ -10,14 +10,14 @@ import {useLink} from 'react-aria'
 const Back = () => {
   const { t } = useTranslation();
   const currentTheme = useContext(ThemeContext);
-  let ref = React.useRef(null);
-  let { linkProps } = useLink({}, ref);
+  const ref = React.useRef(null);
+  const { linkProps } = useLink({}, ref);
 
   return (
     <BackParent
       ref={ref}
      {...linkProps}
-      href='#'
+      href='/settings'
     >
       <Icon link={currentTheme.icons.back} />
       <RegularText $textColor={currentTheme.colors.settings_text_color}>

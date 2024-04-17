@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { HeaderParent } from './styles';
 import  {ThemeContext } from '../../styling/themes';
-import Icon from '../icon';
 import Back from '../back';
 import CustomLink from 'components/CustomLink';
 
@@ -23,8 +22,7 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
   return (
     <HeaderParent>
       <Back />
-      {isSettingsVisible && <CustomLink link={currentTheme.icons.settings} href={"/settings"}/>
-}
+      <CustomLink hide={isSettingsVisible} data-cy="settings_link" link={currentTheme.icons.settings} href={"/settings"}/>
           </HeaderParent>
   );
 };
