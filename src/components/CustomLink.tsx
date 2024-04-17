@@ -7,13 +7,13 @@ export interface CustomLinkProps {
   hide?: boolean;
 }
 
-const CustomLink = ({ href, link, hide=false }: CustomLinkProps) => {
-  if(hide) return null
-  return <CustomATag href={href}>
-  <RegularIcon src={link} />
-   </CustomATag>
-  
-  
+const CustomLink = ({ href, link, hide = false }: CustomLinkProps) => {
+  if (hide) return null;
+  return (
+    <CustomATag href={href}>
+      <RegularIcon src={link} />
+    </CustomATag>
+  );
 };
 
-export default CustomLink
+export default CustomLink;
