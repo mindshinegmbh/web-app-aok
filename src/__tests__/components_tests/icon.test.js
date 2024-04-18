@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Icon from '../../components/icon';
 import {back_dark} from '../../images';

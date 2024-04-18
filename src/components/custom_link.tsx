@@ -4,14 +4,15 @@ import { CustomATag, RegularIcon } from '../styling/common';
 export interface CustomLinkProps {
   link: string;
   href: string;
-  hide?: boolean;
+  show?: boolean;
+  alt: string;
 }
 
-const CustomLink = ({ href, link, hide = false }: CustomLinkProps) => {
-  if (hide) return null;
+const CustomLink = ({alt, href, link, show = true }: CustomLinkProps) => {
+  if (!show) return null;
   return (
     <CustomATag href={href}>
-      <RegularIcon alt="settings link" src={link} />
+      <RegularIcon alt={alt} src={link} />
     </CustomATag>
   );
 };

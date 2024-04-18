@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import Colors from './color';
-import { back_dark, back_light, settings_light } from '../images';
+import { back_dark, back_light, settings_light, right_arrow_dark, right_arrow_light , disabled_switch_dark, disabled_switch_light, enabled_switch_dark, enabled_switch_light } from '../images';
 
 export const DARK = 'dark';
 export const LIGHT = 'light';
@@ -12,11 +12,15 @@ interface ColorType {
   secondary_text_color: string;
   settings_text_color: string;
   header_text_color: string;
+  settings_button_color: string;
 }
 
 interface IconType {
   back: string;
   settings: string;
+  right_arrow: string;
+  disabled_switch: string;
+  enabled_switch: string;
 }
 
 interface ThemeValuesType {
@@ -38,10 +42,14 @@ const Themes: ThemeType = {
       secondary_text_color: Colors.grey_shade_0,
       settings_text_color: Colors.green_shade_3,
       header_text_color: Colors.green_shade_1,
+      settings_button_color: Colors.green_shade_4
     },
     icons: {
       back: back_light,
       settings: settings_light,
+      right_arrow: right_arrow_light,
+      disabled_switch: disabled_switch_light,
+      enabled_switch: enabled_switch_light
     },
   },
   dark: {
@@ -52,10 +60,14 @@ const Themes: ThemeType = {
       secondary_text_color: Colors.grey_shade_0,
       settings_text_color: Colors.green_shade_3,
       header_text_color: Colors.green_shade_1,
+      settings_button_color: Colors.green_shade_4
     },
     icons: {
       back: back_dark,
       settings: settings_light,
+      right_arrow: right_arrow_dark,
+      disabled_switch: disabled_switch_dark,
+      enabled_switch: enabled_switch_dark
     },
   },
 };

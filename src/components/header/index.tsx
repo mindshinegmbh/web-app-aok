@@ -23,10 +23,11 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
     <HeaderParent>
       <Back />
       <CustomLink
-        hide={isSettingsVisible}
+        show={isSettingsVisible}
         data-cy='settings_link'
         link={currentTheme.icons.settings}
         href={'/settings'}
+        alt={"setting link"}
       />
     </HeaderParent>
   );
