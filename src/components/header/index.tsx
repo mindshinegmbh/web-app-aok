@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { HeaderParent } from './styles';
 import { ThemeContext } from '../../styling/themes';
 import Back from '../back';
