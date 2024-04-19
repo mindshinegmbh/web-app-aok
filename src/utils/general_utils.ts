@@ -1,8 +1,16 @@
-import Themes, { DARK, LIGHT } from '../styling/themes';
+import Themes, { DARK, FONT_LARGE, FONT_REGULAR, Fonts, LIGHT } from '../styling/themes';
 
 export const getThemeObjectAgaisntString = (theme: string) => {
   if (theme === LIGHT) return Themes.light;
   if (theme === DARK) return Themes.dark;
 
   return Themes.light;
+};
+
+
+export const getFontObjectAgaisntString = (font: string) => {
+  if (font === FONT_REGULAR) return Fonts.regular;
+  if (font === FONT_LARGE) return Fonts.large;
+
+  return Fonts.regular;
 };

@@ -7,9 +7,9 @@ const Background = styled.div<{ $backgroundColor?: string }>`
   background-color: ${(props) => props.$backgroundColor || Colors.green_shade_0};
 `;
 
-const RegularText = styled.div<{ $textColor?: string }>`
+const RegularText = styled.div<{ $textColor?: string, $textSize:string }>`
   color: ${(props) => props.$textColor};
-  font-size: 17px;
+  font-size: ${(props) => props.$textSize}; 
   line-spacing: 23px;
 `;
 

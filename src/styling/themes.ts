@@ -4,7 +4,31 @@ import { back_dark, back_light, settings_light, right_arrow_dark, right_arrow_li
 
 export const DARK = 'dark';
 export const LIGHT = 'light';
+export const FONT_LARGE = 'large';
+export const FONT_REGULAR = 'regular';
 
+interface FontSizes{
+  name: string;
+  regular_font_size: string;
+}
+
+
+interface FontVersion{
+   large: FontSizes;
+   regular: FontSizes;
+}
+
+
+export const Fonts : FontVersion = {
+   large: {
+       name: FONT_LARGE, 
+       regular_font_size: "20px"
+   },
+   regular: {
+       name: FONT_REGULAR,
+       regular_font_size: "17px"
+   }
+}
 interface ColorType {
   screen_background: string;
   element_background: string;
@@ -24,6 +48,7 @@ interface IconType {
 }
 
 interface ThemeValuesType {
+  name: string;
   colors: ColorType;
   icons: IconType;
 }
@@ -35,6 +60,7 @@ interface ThemeType {
 
 const Themes: ThemeType = {
   light: {
+    name: LIGHT,
     colors: {
       screen_background: Colors.green_shade_0,
       element_background: Colors.white_shade_0,
@@ -53,8 +79,9 @@ const Themes: ThemeType = {
     },
   },
   dark: {
+    name: DARK,
     colors: {
-      screen_background: Colors.green_shade_0,
+      screen_background: Colors.black_shade_0,
       element_background: Colors.white_shade_0,
       primary_text_color: Colors.white_shade_0,
       secondary_text_color: Colors.grey_shade_0,
@@ -72,6 +99,8 @@ const Themes: ThemeType = {
   },
 };
 
+
 export const ThemeContext = createContext(Themes.light);
+export const FontContext = createContext(Fonts.regular);
 
 export default Themes;

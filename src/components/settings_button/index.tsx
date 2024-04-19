@@ -1,30 +1,29 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useRef } from 'react';
 import { SettingButtonParent } from './styles';
-import { ThemeContext } from '../../styling/themes';
+import { FontContext, ThemeContext } from '../../styling/themes';
 import { RegularText } from 'styling/common';
 import Icon from 'components/icon';
 import { useTranslation } from 'react-i18next';
+import { useButton } from 'react-aria';
 
 export interface SettingsButtonProps {
   image: string;
   text: string;
-  alt: string
+  alt: string;
+  onClick: () => void
 }
 
-const SettingsButton = ({ image, text , alt }: SettingsButtonProps) => {
+const SettingsButton = (props: SettingsButtonProps) => {
   const currentTheme = useContext(ThemeContext);
+  const currentFont = useContext(FontContext)
   const { t } = useTranslation();
-  //const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    //  setTimeout(()=> {
-    //     dispatch(setTheme(DARK))
-    //  }, 5000)
-  });
-
+  let ref = useRef<HTMLButtonElement>(null);
+  let { buttonProps } = useButton({}, ref);
+  let { image, text , alt, onClick } = props;
+  
   return (
-    <SettingButtonParent>
-      <RegularText $textColor={currentTheme.colors.settings_button_color}>{t(text)}</RegularText>
+    <SettingButtonParent {...buttonProps} ref={ref} onClick={onClick}>
+      <RegularText $textSize={currentFont.regular_font_size} $textColor={currentTheme.colors.settings_button_color}>{t(text)}</RegularText>
       <Icon alt={alt} link={image} />
     </SettingButtonParent>
   );

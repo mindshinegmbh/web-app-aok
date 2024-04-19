@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BackParent } from './styles';
 import { RegularText } from '../../styling/common';
 import { useTranslation } from 'react-i18next';
-import { ThemeContext } from '../../styling/themes';
+import { FontContext, ThemeContext } from '../../styling/themes';
 import Icon from '../icon';
 import {useLink} from 'react-aria'
 
@@ -10,6 +10,7 @@ import {useLink} from 'react-aria'
 const Back = () => {
   const { t } = useTranslation();
   const currentTheme = useContext(ThemeContext);
+  const currentFont = useContext(FontContext)
   const ref = React.useRef(null);
   const { linkProps } = useLink({}, ref);
 
@@ -20,7 +21,7 @@ const Back = () => {
       href='/settings'
     >
       <Icon alt="back button" link={currentTheme.icons.back} />
-      <RegularText $textColor={currentTheme.colors.settings_text_color}>
+      <RegularText $textSize={currentFont.regular_font_size} $textColor={currentTheme.colors.settings_text_color}>
         {t('header.back')}
       </RegularText>
     </BackParent>
