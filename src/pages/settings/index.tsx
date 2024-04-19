@@ -17,6 +17,7 @@ function Settings() {
          <SettingsButton onClick={() => {}} alt={"training link"} image={theme.icons.right_arrow} text={"settings_page.first_line_text"} />
          <DarkModeButton />
          <FontModeButton />
+         <SettingsButton onClick={() => {}} alt={"barrier link"} image={theme.icons.right_arrow} text={"settings_page.fourth_line_text"} />
        </SettingListParent>
     </Background>
   );

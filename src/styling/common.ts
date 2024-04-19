@@ -8,6 +8,7 @@ const Background = styled.div<{ $backgroundColor?: string }>`
 `;
 
 const RegularText = styled.div<{ $textColor?: string, $textSize:string }>`
+  font-family: 'AOK Buenos Aires', sans-serif;
   color: ${(props) => props.$textColor};
   font-size: ${(props) => props.$textSize}; 
   line-spacing: 23px;
