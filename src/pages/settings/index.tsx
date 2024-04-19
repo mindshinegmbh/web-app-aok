@@ -6,15 +6,17 @@ import { SettingListParent } from './styles';
 import SettingsButton from 'components/settings_button';
 import DarkModeButton from './dark_mode';
 import FontModeButton from './large_text_mode';
+import { useNavigate } from 'react-router-dom';
 
 function Settings() {
   const theme = useContext(ThemeContext);
+  const navigation = useNavigate()
 
   return (
     <Background $backgroundColor={theme.colors.screen_background}>
       <Header isSettingsVisible={false} />
        <SettingListParent>
-         <SettingsButton onClick={() => {}} alt={"training link"} image={theme.icons.right_arrow} text={"settings_page.first_line_text"} />
+         <SettingsButton onClick={() => {navigation("/home")}} alt={"training link"} image={theme.icons.right_arrow} text={"settings_page.first_line_text"} />
          <DarkModeButton />
          <FontModeButton />
          <SettingsButton onClick={() => {}} alt={"barrier link"} image={theme.icons.right_arrow} text={"settings_page.fourth_line_text"} />

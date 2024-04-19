@@ -8,6 +8,7 @@ import { setTheme } from '../../redux/theme';
 const DarkModeButton = () => {
   const currentTheme = useContext(ThemeContext);
   const dispatch = useAppDispatch();
+  console.log(currentTheme.name)
 
   const switchTheme = ()=>{
     dispatch(setTheme(currentTheme.name === LIGHT ? DARK : LIGHT))

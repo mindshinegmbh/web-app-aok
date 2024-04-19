@@ -10,15 +10,7 @@ export interface HeaderProps {
 
 const Header = ({ isSettingsVisible }: HeaderProps) => {
   const currentTheme = useContext(ThemeContext);
-  //const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    //  setTimeout(()=> {
-    //     dispatch(setTheme(DARK))
-    //  }, 5000)
-    console.log(isSettingsVisible);
-  });
-
+  
   return (
     <HeaderParent>
       <Back />

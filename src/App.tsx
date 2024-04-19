@@ -10,6 +10,7 @@ import Settings from 'pages/settings';
 function App() {
   const theme = useAppSelector(SelectTheme);
   const font = useAppSelector(SelectFont);
+  console.log("from here:"+theme)
   return (
     <>
       <Router>
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/settings' element={<Settings />} />
+              <Route path='/home' element={<Home />} />
             </Routes>
           </FontContext.Provider>
         </ThemeContext.Provider>

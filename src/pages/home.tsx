@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
 import Header from '../components/header';
-import { ThemeContext } from '../styling/themes';
-import { Background } from '../styling/common';
+import { FontContext, ThemeContext } from '../styling/themes';
+import { Background, RegularText } from '../styling/common';
 
 function Home() {
-  const theme = useContext(ThemeContext);
+  const currentTheme = useContext(ThemeContext);
+  const currentFont = useContext(FontContext)
+  console.log(currentTheme.name)
 
   return (
-    <Background $backgroundColor={theme.colors.screen_background}>
+    <Background $backgroundColor={currentTheme.colors.screen_background}>
       <Header isSettingsVisible={true} />
+      <RegularText $textSize={currentFont.regular_font_size} $textColor={currentTheme.colors.settings_button_color}>Home Page</RegularText>
     </Background>
   );
 }
