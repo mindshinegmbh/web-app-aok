@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import DarkModeButton from '../../../pages/settings/dark_mode';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { renderWithProviders } from '../../../utils/test_utils';
