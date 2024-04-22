@@ -3,9 +3,9 @@ import { screen } from '@testing-library/react';
 import LargeModeButton from '../../../pages/settings/large_text_mode';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { renderWithProviders } from '../../../utils/test_utils';
-import { DARK, FONT_LARGE, FONT_REGULAR, LIGHT } from '../../../styling/themes';
+import { FONT_LARGE, FONT_REGULAR } from '../../../styling/themes';
 import { setupStore } from 'redux/store';
-import { setFont, setTheme } from 'redux/theme';
+import { setFont } from 'redux/theme';
 import { addI18nResources, initI18n } from '../../../utils/test_utils';
 describe('LargeModeButton', () => {
   beforeAll(() => {
