@@ -10,7 +10,8 @@ export interface SettingsButtonProps {
   image: string;
   text: string;
   alt: string;
-  onClick: () => void
+  onClick: () => void;
+  testid: string;
 }
 
 const SettingsButton = (props: SettingsButtonProps) => {
@@ -28,7 +29,7 @@ const SettingsButton = (props: SettingsButtonProps) => {
   
   return (
     <SettingButtonParent href='#' {...linkProps} ref={ref} onClick={onClickCustom}>
-      <RegularText $textSize={currentFont.regular_font_size} $textColor={currentTheme.colors.settings_button_color}>{t(text)}</RegularText>
+      <RegularText data-testid={props.testid} $textSize={currentFont.regular_font_size} $textColor={currentTheme.colors.settings_button_color}>{t(text)}</RegularText>
       <Icon alt={alt} link={image} />
     </SettingButtonParent>
   );

@@ -13,13 +13,13 @@ function Settings() {
   const navigation = useNavigate()
 
   return (
-    <Background $backgroundColor={theme.colors.screen_background}>
+    <Background data-testid={"settings background"} $backgroundColor={theme.colors.screen_background}>
       <Header isSettingsVisible={false} />
        <SettingListParent>
-         <SettingsButton onClick={() => {navigation("/home")}} alt={"training link"} image={theme.icons.right_arrow} text={"settings_page.first_line_text"} />
+         <SettingsButton testid={"training"} onClick={() => {navigation("/home")}} alt={"training link"} image={theme.icons.right_arrow} text={"settings_page.first_line_text"} />
          <DarkModeButton />
          <FontModeButton />
-         <SettingsButton onClick={() => {}} alt={"barrier link"} image={theme.icons.right_arrow} text={"settings_page.fourth_line_text"} />
+         <SettingsButton testid={"barrier"} onClick={() => {}} alt={"barrier link"} image={theme.icons.right_arrow} text={"settings_page.fourth_line_text"} />
        </SettingListParent>
     </Background>
   );

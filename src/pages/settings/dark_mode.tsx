@@ -3,7 +3,7 @@ import { DARK, LIGHT, ThemeContext } from '../../styling/themes';
 import SettingsButton from 'components/settings_button';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setTheme } from '../../redux/theme';
-import { SelectTheme } from 'redux/theme/selectors';
+import { SelectTheme } from '../../redux/theme/selectors';
 
 
 const DarkModeButton = () => {
@@ -20,7 +20,7 @@ const DarkModeButton = () => {
 
   return (
      <>
-      <SettingsButton onClick={switchTheme} alt={getAltText()} image={getImage()} text={"settings_page.second_line_text"}/>
+      <SettingsButton testid={"dark mode"} onClick={switchTheme} alt={getAltText()} image={getImage()} text={"settings_page.second_line_text"}/>
      </>
   );
 };

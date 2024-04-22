@@ -16,7 +16,7 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
       <Back />
       <CustomLink
         show={isSettingsVisible}
-        data-cy='settings_link'
+        data-testId='settings_link'
         link={currentTheme.icons.settings}
         href={'/settings'}
         alt={"setting link"}

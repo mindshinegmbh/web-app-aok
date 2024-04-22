@@ -3,7 +3,7 @@ import { FONT_LARGE, FONT_REGULAR, FontContext, ThemeContext } from '../../styli
 import SettingsButton from 'components/settings_button';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setFont } from '../../redux/theme';
-import { SelectFont } from 'redux/theme/selectors';
+import { SelectFont } from '../../redux/theme/selectors';
 
 
 const FontModeButton = () => {
@@ -21,7 +21,7 @@ const FontModeButton = () => {
 
   return (
      <>
-      <SettingsButton onClick={switchFont} alt={getImageAltText()} image={getImage()} text={"settings_page.third_line_text"}/>
+      <SettingsButton testid={"large text"} onClick={switchFont} alt={getImageAltText()} image={getImage()} text={"settings_page.third_line_text"}/>
      </>
   );
 };
