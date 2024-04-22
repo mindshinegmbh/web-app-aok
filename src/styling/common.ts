@@ -7,9 +7,10 @@ const Background = styled.div<{ $backgroundColor?: string }>`
   background-color: ${(props) => props.$backgroundColor || Colors.green_shade_0};
 `;
 
-const RegularText = styled.div<{ $textColor?: string }>`
-  color: ${(props) => props.$textColor || Colors.green_shade_4};
-  font-size: 17px;
+const RegularText = styled.div<{ $textColor?: string, $textSize:string }>`
+  font-family: 'AOK Buenos Aires', sans-serif;
+  color: ${(props) => props.$textColor};
+  font-size: ${(props) => props.$textSize}; 
   line-spacing: 23px;
 `;
 
@@ -19,4 +20,9 @@ const RegularIcon = styled.img`
   object-fit: contain;
 `;
 
-export { RegularText, RegularIcon, Background };
+
+const CustomATag = styled.a`
+   text-decoration: none;
+`;
+
+export { RegularText, RegularIcon, Background , CustomATag };

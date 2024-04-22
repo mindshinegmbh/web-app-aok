@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { HeaderParent } from './styles';
-import  {ThemeContext } from '../../styling/themes';
-import Icon from '../icon';
+import { ThemeContext } from '../../styling/themes';
 import Back from '../back';
+import CustomLink from 'components/custom_link';
 
 export interface HeaderProps {
   isSettingsVisible: boolean;
@@ -10,19 +10,17 @@ export interface HeaderProps {
 
 const Header = ({ isSettingsVisible }: HeaderProps) => {
   const currentTheme = useContext(ThemeContext);
-  //const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    //  setTimeout(()=> {
-    //     dispatch(setTheme(DARK))
-    //  }, 5000)
-    console.log(isSettingsVisible)
-  }, );
-
+  
   return (
     <HeaderParent>
       <Back />
-      <Icon link={currentTheme.icons.settings} />
+      <CustomLink
+        show={isSettingsVisible}
+        data-testId='settings_link'
+        link={currentTheme.icons.settings}
+        href={'/settings'}
+        alt={"setting link"}
+      />
     </HeaderParent>
   );
 };
