@@ -1,8 +1,8 @@
 import { all, takeLatest } from 'redux-saga/effects';
-import { callAlert } from './common/saga';
+import { getSession } from './session/saga';
 
 const rootSaga = function* () {
-  yield all([takeLatest('counter/increment', callAlert)]);
+  yield all([takeLatest('session/getSessionData', getSession)]);
 };
 
 export default rootSaga;

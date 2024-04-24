@@ -6,11 +6,12 @@ import { useAppSelector } from './redux/hooks';
 import { SelectFont, SelectTheme } from './redux/theme/selectors';
 import { getFontObjectAgaisntString, getThemeObjectAgaisntString } from './utils/general_utils';
 import Settings from 'pages/settings';
+import Session  from 'pages/session';
+
 
 function App() {
   const theme = useAppSelector(SelectTheme);
   const font = useAppSelector(SelectFont);
-  console.log("from here:"+theme)
   return (
     <>
       <Router>
@@ -20,6 +21,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/settings' element={<Settings />} />
               <Route path='/home' element={<Home />} />
+              <Route path='/session' element={<Session />} />
             </Routes>
           </FontContext.Provider>
         </ThemeContext.Provider>
