@@ -1,24 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Header from 'components/header';
 import { ThemeContext } from 'styling/themes';
 import { Background } from 'styling/common';
-import { useAppDispatch } from '../../redux/hooks';
-import { getSessionData } from '../../redux/session';
+import { useAppSelector } from '../../redux/hooks';
+import { SelectTransformedSessionData } from '../../redux/session/selectors';
 
 function Session() {
-  const dispatch = useAppDispatch();
   const theme = useContext(ThemeContext);
-
-  useEffect(() => {
-    dispatch(getSessionData(23));
-  });
-
+  const sessionData = useAppSelector(SelectTransformedSessionData);
+  console.log(sessionData)
+  
   return (
     <Background
       data-testid={'session background'}
       $backgroundColor={theme.colors.screen_background}
     >
       <Header isSettingsVisible={false} />
+      <div>
+        
+      </div>
     </Background>
   );
 }
