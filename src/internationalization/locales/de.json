@@ -10,5 +10,9 @@
     "second_line_text": "Dark Mode",
     "third_line_text": "Large Text",
     "fourth_line_text": "Barrierefreiheit"
+  },
+  "audio_player": {
+    "forward_text": "+15s",
+    "backward_text": "-15s"
   }
 }

@@ -4,9 +4,11 @@ const Colors = {
   green_shade_2: '#0e3a2d',
   green_shade_3: '#18ab42',
   green_shade_4: '#91F54A',
+  green_shade_5_opaque: '#990E3A2D',
   black_shade_0: '#00150f',
   white_shade_0: '#ffffff',
   grey_shade_0: '#5f6466',
+  grey_shade_1: '#1F767680',
 };
 
 export default Colors;

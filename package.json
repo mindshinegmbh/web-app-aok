@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.2.0",
     "@react-navigation/native": "^6.1.17",
     "@reduxjs/toolkit": "^2.2.3",
     "@testing-library/jest-dom": "^5.14.1",
@@ -31,6 +32,7 @@
     "rgb-hex": "^4.1.0",
     "sort-by": "^1.2.0",
     "styled-components": "^6.1.8",
+    "swiper": "8.4.7",
     "typescript": "*",
     "web-vitals": "^2.1.0"
   },
@@ -52,7 +54,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/display-name": "off"
+    }
   },
   "jest": {
     "transform": {

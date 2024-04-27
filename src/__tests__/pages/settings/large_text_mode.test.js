@@ -4,8 +4,8 @@ import LargeModeButton from '../../../pages/settings/large_text_mode';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { renderWithProviders } from '../../../utils/test_utils';
 import { FONT_LARGE, FONT_REGULAR } from '../../../styling/themes';
-import { setupStore } from 'redux/store';
-import { setFont } from 'redux/theme';
+import { setupStore } from 'localredux/store';
+import { setFont } from 'localredux/theme';
 import { addI18nResources, initI18n } from '../../../utils/test_utils';
 describe('LargeModeButton', () => {
   beforeAll(() => {

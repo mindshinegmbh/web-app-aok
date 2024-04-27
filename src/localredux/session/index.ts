@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { SESSION } from '../constants';
 import { initialState } from './state';
-import { Session } from 'models/session_type';
+import { SessionSeverObject } from 'models/session_type';
 
 export const sessionSlice = createSlice({
   name: SESSION,
@@ -11,7 +11,7 @@ export const sessionSlice = createSlice({
     getSessionData: (state, action: PayloadAction<number>) => {
       state.sessionId = action.payload;
     },
-    setSessionData: (state, action: PayloadAction<Session>) => {
+    setSessionData: (state, action: PayloadAction<SessionSeverObject>) => {
       state.session = action.payload;
     }, 
   },
