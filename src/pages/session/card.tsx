@@ -14,7 +14,7 @@ const CardComponent = (props: CardProps) => {
 
   return (
     <CardParent>
-      <AudioPlayer />
+      <AudioPlayer url={props.card.audio_url} />
       <RegularText
         $textSize={currentFont.regular_font_size}
         $textColor={currentTheme.colors.settings_button_color}
