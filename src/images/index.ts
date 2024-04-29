@@ -12,6 +12,10 @@ import play_dark from './icons/dark/play_dark.png';
 import play_light from './icons/light/play_light.png';
 import pause_light from './icons/light/pause_light.png';
 import pause_dark from './icons/dark/pause_dark.png';
+import bottom_left_dark from './icons/dark/bottom_left_arrow.png';
+import bottom_left_light from './icons/light/bottom_left_arrow.png';
+import bottom_right_light from './icons/light/bottom_right_arrow.png';
+import bottom_right_dark from './icons/dark/bottom_right_arrow.png';
 
 export {
   back_dark,
@@ -28,4 +32,8 @@ export {
   play_light,
   pause_dark,
   pause_light,
+  bottom_left_dark,
+  bottom_left_light, 
+  bottom_right_dark,
+  bottom_right_light
 };

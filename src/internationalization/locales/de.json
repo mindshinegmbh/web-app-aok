@@ -15,5 +15,9 @@
     "forward_text": "+15s",
     "backward_text": "-15s",
     "progress_text": "{{remaining}} von {{out}}"
+    
+  },
+  "session": {
+    "textfield": "Schreibe deine Antwort hier... "
   }
 }

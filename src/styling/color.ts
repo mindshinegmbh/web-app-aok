@@ -9,6 +9,7 @@ const Colors = {
   white_shade_0: '#ffffff',
   grey_shade_0: '#5f6466',
   grey_shade_1: '#1F767680',
+  green_shade_6: "#293033;"
 };
 
 export default Colors;

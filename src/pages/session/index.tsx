@@ -6,9 +6,12 @@ import CardComponent from './card';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
+import BottomBar from 'components/bottom_bar';
+import { useSwiper } from 'swiper/react';
 
 function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
+  const swiper = useSwiper();
   console.log(sessionData);
 
   return (
@@ -20,6 +23,7 @@ function Session() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <BottomBar letfOnClick={() => {swiper.slidePrev()}} rightOnClick={() => {swiper.slideNext()}}/>
     </>
   );
 }

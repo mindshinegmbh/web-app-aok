@@ -10,7 +10,7 @@ export const SelectTransformedSessionData = createSelector(SelectSessionData, (d
             id: value.session_id,
             title: value.title,
             body: value.text,
-            bullet: [],
+            bullet: ["Hello" , "Another Hello"],
             cardType: value.card_type,
             audio_url: value.audio_file,
             inputs: value.inputs,

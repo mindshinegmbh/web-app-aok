@@ -14,6 +14,10 @@ import {
   pause_light,
   pause_dark,
   play_dark,
+  bottom_left_light,
+  bottom_right_light,
+  bottom_left_dark,
+  bottom_right_dark,
 } from '../images';
 
 export const DARK = 'dark';
@@ -26,6 +30,8 @@ interface FontSizes {
   regular_font_size: string;
   xsmall_font_size: string;
   xsmall_font_weight: string;
+  small_font: string;
+  large_font: string;
 }
 
 interface FontVersion {
@@ -39,12 +45,16 @@ export const Fonts: FontVersion = {
     regular_font_size: '20px',
     xsmall_font_size: '14px',
     xsmall_font_weight: '700',
+    small_font: "20px",
+    large_font: "25px"
   },
   regular: {
     name: FONT_REGULAR,
     regular_font_size: '17px',
+    small_font: "14px",
     xsmall_font_size: '8px',
     xsmall_font_weight: '400',
+    large_font: "18px"
   },
 };
 interface ColorType {
@@ -60,7 +70,10 @@ interface ColorType {
   forward_backward_bordercolor: string;
   audio_player_text_color: string;
   progress_bar_color: string
-  uncompleted_bar_color: string
+  uncompleted_bar_color: string;
+  all_white_color: string;
+  text_field_place_holder: string;
+  field_background_color:string;
 }
 
 export interface IconType {
@@ -71,6 +84,8 @@ export interface IconType {
   enabled_switch: string;
   play_button: string;
   pause_button: string;
+  bottom_bar_left: string;
+  bottom_bar_right: string;
 }
 
 export interface ImageSize {
@@ -86,6 +101,8 @@ export interface SizesType {
   enabled_switch: ImageSize;
   play_button: ImageSize;
   pause_button: ImageSize;
+  bottom_bar_buttons: ImageSize;
+  
 }
 export const ImageSizes: SizesType = {
   back: { width: '24px', height: '24px' },
@@ -95,6 +112,7 @@ export const ImageSizes: SizesType = {
   enabled_switch: { width: '52px', height: '32px' },
   play_button: { width: '45px', height: '45px' },
   pause_button: { width: '45px', height: '45px' },
+  bottom_bar_buttons: { width: '35px', height: '35px' },
 };
 
 export interface ThemeValuesType {
@@ -124,7 +142,10 @@ const Themes: ThemeType = {
       forward_backward_bordercolor: Colors.green_shade_0,
       audio_player_text_color: Colors.green_shade_0,
       progress_bar_color: Colors.green_shade_0,
-      uncompleted_bar_color: Colors.grey_shade_1
+      uncompleted_bar_color: Colors.grey_shade_1,
+      all_white_color: Colors.white_shade_0,
+      text_field_place_holder: Colors.white_shade_0,
+      field_background_color: Colors.white_shade_0
     },
     icons: {
       back: back_light,
@@ -134,6 +155,8 @@ const Themes: ThemeType = {
       enabled_switch: enabled_switch_light,
       play_button: play_light,
       pause_button: pause_light,
+      bottom_bar_left: bottom_left_light,
+      bottom_bar_right: bottom_right_light
     },
   },
   dark: {
@@ -151,7 +174,10 @@ const Themes: ThemeType = {
       forward_backward_bordercolor: Colors.green_shade_4,
       audio_player_text_color: Colors.green_shade_4,
       progress_bar_color: Colors.green_shade_4,
-      uncompleted_bar_color: Colors.grey_shade_1
+      uncompleted_bar_color: Colors.grey_shade_1,
+      all_white_color: Colors.white_shade_0,
+      text_field_place_holder: Colors.green_shade_6,
+      field_background_color: Colors.green_shade_5_opaque
     },
     icons: {
       back: back_dark,
@@ -161,6 +187,8 @@ const Themes: ThemeType = {
       enabled_switch: enabled_switch_dark,
       pause_button: pause_dark,
       play_button: play_dark,
+      bottom_bar_left: bottom_left_dark,
+      bottom_bar_right: bottom_right_dark
     },
   },
 };

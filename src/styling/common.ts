@@ -22,6 +22,19 @@ const XSmallText = styled.div<{ $textColor?: string, $textSize:string, $textWeig
   line-spacing: 20px;
 `;
 
+const SmallText = styled.div<{ $textColor?: string, $textSize:string  }>`
+  font-family: 'AOK Buenos Aires', sans-serif;
+  color: ${(props) => props.$textColor};
+  font-size: ${(props) => props.$textSize}; 
+`;
+
+
+const LargeText = styled.div<{ $textColor?: string, $textSize:string  }>`
+  font-family: 'AOK Buenos Aires', sans-serif;
+  color: ${(props) => props.$textColor};
+  font-size: ${(props) => props.$textSize}; 
+  font-weight: 600; 
+`;
 
 
 const RegularIcon = styled.img<{ $width?: string, $height?: string }>`
@@ -34,4 +47,4 @@ const CustomATag = styled.a`
    text-decoration: none;
 `;
 
-export { RegularText, RegularIcon, Background , CustomATag , XSmallText };
+export { RegularText, RegularIcon, Background , CustomATag , XSmallText, LargeText, SmallText };
