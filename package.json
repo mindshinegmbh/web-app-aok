@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.2.0",
+    "@react-navigation/native": "^6.1.17",
+    "@reduxjs/toolkit": "^2.2.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,27 +13,57 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "axios": "^1.6.8",
+    "env-cmd": "^10.1.0",
+    "i18next": "^23.11.2",
+    "immer": "^10.0.4",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
+    "npm": "^10.5.2",
     "react": "^18.2.0",
+    "react-aria": "^3.32.1",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.3.0",
+    "rgb-hex": "^4.1.0",
+    "sort-by": "^1.2.0",
+    "styled-components": "^6.1.8",
+    "swiper": "8.4.7",
     "typescript": "*",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:staging": "env-cmd -f .env.staging react-scripts start",
+    "start:production": "env-cmd -f .env.production react-scripts start",
     "build": "react-scripts build",
+    "build:staging": "env-cmd -f .env.staging react-scripts build",
+    "build:production": "env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky",
-    "lint": "eslint src/**/*",
-    "lint:fix": "eslint --fix src/**/*",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,html}'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/display-name": "off"
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": []
   },
   "browserslist": {
     "production": [
@@ -69,6 +102,6 @@
     "typescript-eslint": "^7.6.0"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "src/**/*.{js,jsx,ts,tsx,css,html}": "prettier --write --ignore-unknown"
   }
 }

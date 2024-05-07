@@ -1,0 +1,23 @@
+{
+  "home": {
+    "heading": "Learn React"
+  },
+  "header": {
+    "back": "Züruk"
+  },
+  "settings_page": {
+    "first_line_text": "Trainingsfortschritt",
+    "second_line_text": "Dark Mode",
+    "third_line_text": "Large Text",
+    "fourth_line_text": "Barrierefreiheit"
+  },
+  "audio_player": {
+    "forward_text": "+15s",
+    "backward_text": "-15s",
+    "progress_text": "{{remaining}} von {{out}}"
+    
+  },
+  "session": {
+    "textfield": "Schreibe deine Antwort hier... "
+  }
+}

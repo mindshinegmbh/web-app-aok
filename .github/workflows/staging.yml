@@ -1,7 +1,5 @@
 name: CI/CD Pipline For Staging
 on:
-  push:
-    branches: [staging]
   pull_request:
     branches: [staging]
 jobs:
@@ -26,13 +24,13 @@ jobs:
       - name: Run E2E Cypress
         uses: cypress-io/github-action@v6
         with:
-          build: yarn run build
-          start: yarn run start
+          build: yarn run build:staging
+          start: yarn run start:staging
           wait-on: http://localhost:3000
       - name: Build for Staging
         run: |
           unset CI
-          yarn build
+          yarn build:staging
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:

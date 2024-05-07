@@ -1,0 +1,80 @@
+{
+    "session": {
+      "id": 30,
+      "journey_id": 10,
+      "position": 8,
+      "title": "Meditation für mehr Mitgefühl",
+      "description": "Eine echter Win-Win. Studien zeigen, dass liebendes Mitgefühl für andere Menschen sich positiv auf deine Gesundheit auswirkt. Wir zeigen dir wie du dieses Gefühl in dir stärkst und dich gut fühlst.  ",
+      "equipment": null,
+      "duration": "10 Min",
+      "hidden": false,
+      "new": false,
+      "free": false,
+      "image_url": "https://mindshine-audio-files-test.s3.eu-central-1.amazonaws.com/images_new_design/Single+Exercise/Meta_Meditation.png",
+      "searchable": true,
+      "high_res_image_url": "https://mindshine-audio-files-test.s3.eu-central-1.amazonaws.com/images_new_design/Single+Exercise/Meta_Meditation.png",
+      "short_description": null,
+      "benefits": [
+        "Fördere dein Mitgefühl",
+        "Weniger Stress und Sorgen",
+        "Beruhige deinen Geist"
+      ],
+      "high_res_image_url_v2": "https://mindshine-audio-files-test.s3.eu-central-1.amazonaws.com/Cover_Images_V3/Exercises/Metta+means+kindness_big.png",
+      "image_url_v2": "https://mindshine-audio-files-test.s3.eu-central-1.amazonaws.com/Cover_Images_V3/Exercises/Metta+means+kindness.png",
+      "updated": false,
+      "testable": false,
+      "hide_session_rating": false,
+      "cards": [
+        {
+          "id": 121,
+          "session_id": 30,
+          "position": 1,
+          "title": "Zeige ein wenig Güte",
+          "text": "Folge dieser geführten Meditation und lass einfach los. \r\n\r\n{{ Tipp: Lass es einfach geschehen. Entspann dich und nimm wahr, wie sich dein Körper anfühlt :) ## protip }} \r\n\r\n{{ https://s3.eu-central-1.amazonaws.com/mindshine-audio-files-test/images/audio2.png ## image }}",
+          "audio_file": "https://s3.eu-central-1.amazonaws.com/mindshine-audio-files-test/Calm+Down/CD_7_mettameditation_DE+2.mp3",
+          "metainfo_line_1": "Aufgabe - 8 Min",
+          "markdown_text": null,
+          "first_time_flag": false,
+          "autoswipe_after_media": false,
+          "card_type": "Audio",
+          "metainfo_line_2": null,
+          "metainfo_lines_payload": {
+            "show_metainfo_line_1_de": true,
+            "show_metainfo_line_1_en": true
+          },
+          "fullscreen_media_file": null,
+          "widescreen_media_file": null,
+          "inputs": [],
+          "key_moments": []
+        },
+        {
+          "id": 123,
+          "session_id": 30,
+          "position": 2,
+          "title": "(La)Metta für den Geist",
+          "text": "{{ https://s3.eu-central-1.amazonaws.com/mindshine-audio-files-test/images/congratulations.png ## image }}\r\n\r\n{{ zu Favoriten hinzufügen ## add_to_playbook }} \r\n\r\n{{ Denk' dran: Sich vorzustellen gutmütig und gütig zu sein hilft dir, dich zu entspannen und beruhigen. ## protip }} ",
+          "audio_file": "https://s3.eu-central-1.amazonaws.com/mindshine-audio-files-test/Calm+Down/CD_7_mettameditation_DE+3.mp3",
+          "metainfo_line_1": "Glückwunsch - Session abgeschlossen",
+          "markdown_text": null,
+          "first_time_flag": false,
+          "autoswipe_after_media": false,
+          "card_type": "Audio",
+          "metainfo_line_2": null,
+          "metainfo_lines_payload": {
+            "show_metainfo_line_1_de": true,
+            "show_metainfo_line_1_en": true
+          },
+          "fullscreen_media_file": null,
+          "widescreen_media_file": null,
+          "inputs": [],
+          "key_moments": []
+        }
+      ],
+      "tags": [
+        136,
+        94,
+        130
+      ],
+      "completed_sessions_count": 0
+    }
+  }
