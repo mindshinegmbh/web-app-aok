@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+const MainContentParent = styled.div`
+  display: flex;
+  flex: 0.9;
+`;
+
+const BottomContentParent = styled.div<{ $backgroundColor: string }>`
+  display: flex;
+  flex: 0.1;
+  background-color: ${(props) => props.$backgroundColor};
+`;
+
 const Session = styled.div`
   display: flex;
   flex: 1;
@@ -34,7 +45,14 @@ const TextAreaParent = styled.textarea<{ $textColor: string; $backgroundColor: s
   border-width: 1px;
   border-radius: 15px;
   border-color: ${(props) => props.$backgroundColor};
-  padding: 10px
-  
+  padding: 10px;
 `;
-export { Session, CardParent, CenterTextParent, UlParent, TextAreaParent };
+export {
+  Session,
+  CardParent,
+  CenterTextParent,
+  UlParent,
+  TextAreaParent,
+  MainContentParent,
+  BottomContentParent,
+};

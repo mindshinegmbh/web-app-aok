@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
 import CardComponent from './card';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
+import { Swiper, SwiperSlide, SwiperProps, SwiperRef } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
 import BottomBar from 'components/bottom_bar';
-import { useSwiper } from 'swiper/react';
+import { BottomContentParent, MainContentParent } from './styles';
+import { useBaseProps } from 'hocs/base_component';
 
 function Session() {
+  const {currentTheme} = useBaseProps()
   const sessionData = useAppSelector(SelectTransformedSessionData);
-  const swiper = useSwiper();
-  console.log(sessionData);
-
+  const swiperRef = useRef<SwiperRef>(null)
+  
   return (
     <>
-      <Swiper>
-        {sessionData?.cards?.map((card, index) => (
-          <SwiperSlide key={index}>
-            <CardComponent card={card} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <BottomBar letfOnClick={() => {swiper.slidePrev()}} rightOnClick={() => {swiper.slideNext()}}/>
+      <MainContentParent>
+        <Swiper  ref={swiperRef}>
+          {sessionData?.cards?.map((card, index) => (
+            <SwiperSlide key={index}>
+              <CardComponent card={card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </MainContentParent>
+      <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
+        <BottomBar
+          letfOnClick={() => {
+            swiperRef?.current?.swiper?.slidePrev()
+          }}
+          rightOnClick={() => {
+            swiperRef?.current?.swiper?.slideNext()
+          }}
+        />
+      </BottomContentParent>
     </>
   );
 }
