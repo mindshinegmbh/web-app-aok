@@ -1,6 +1,6 @@
 name: CI/CD Pipline For Staging
 on:
-  push:
+  pull_request:
     branches: [staging]
 jobs:
   build:
