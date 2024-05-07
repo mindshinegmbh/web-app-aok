@@ -47,6 +47,18 @@ const TextAreaParent = styled.textarea<{ $textColor: string; $backgroundColor: s
   border-color: ${(props) => props.$backgroundColor};
   padding: 10px;
 `;
+
+const InputParent = styled.div`
+  display: flex;
+  flex: 1;
+`;
+
+const InputCheckboxParent = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+`;
+
 export {
   Session,
   CardParent,
@@ -55,4 +67,6 @@ export {
   TextAreaParent,
   MainContentParent,
   BottomContentParent,
+  InputParent,
+  InputCheckboxParent
 };

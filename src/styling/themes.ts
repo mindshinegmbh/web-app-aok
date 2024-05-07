@@ -18,6 +18,10 @@ import {
   bottom_right_light,
   bottom_left_dark,
   bottom_right_dark,
+  checkbox_selected_dark,
+  checkbox_selected_light,
+  checkbox_unselected_dark,
+  checkbox_unselected_light
 } from '../images';
 
 export const DARK = 'dark';
@@ -86,6 +90,8 @@ export interface IconType {
   pause_button: string;
   bottom_bar_left: string;
   bottom_bar_right: string;
+  checkbox_selected: string;
+  checkbox_unselected: string;
 }
 
 export interface ImageSize {
@@ -144,7 +150,7 @@ const Themes: ThemeType = {
       progress_bar_color: Colors.green_shade_0,
       uncompleted_bar_color: Colors.grey_shade_1,
       all_white_color: Colors.white_shade_0,
-      text_field_place_holder: Colors.white_shade_0,
+      text_field_place_holder: Colors.green_shade_6,
       field_background_color: Colors.white_shade_0
     },
     icons: {
@@ -156,7 +162,9 @@ const Themes: ThemeType = {
       play_button: play_light,
       pause_button: pause_light,
       bottom_bar_left: bottom_left_light,
-      bottom_bar_right: bottom_right_light
+      bottom_bar_right: bottom_right_light,
+      checkbox_selected: checkbox_selected_light,
+      checkbox_unselected: checkbox_unselected_light
     },
   },
   dark: {
@@ -188,7 +196,9 @@ const Themes: ThemeType = {
       pause_button: pause_dark,
       play_button: play_dark,
       bottom_bar_left: bottom_left_dark,
-      bottom_bar_right: bottom_right_dark
+      bottom_bar_right: bottom_right_dark,
+      checkbox_selected: checkbox_selected_dark,
+      checkbox_unselected: checkbox_unselected_dark
     },
   },
 };

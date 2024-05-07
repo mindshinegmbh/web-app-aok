@@ -16,6 +16,10 @@ import bottom_left_dark from './icons/dark/bottom_left_arrow.png';
 import bottom_left_light from './icons/light/bottom_left_arrow.png';
 import bottom_right_light from './icons/light/bottom_right_arrow.png';
 import bottom_right_dark from './icons/dark/bottom_right_arrow.png';
+import checkbox_selected_dark from './icons/dark/checkbox_selected.png';
+import checkbox_unselected_dark from './icons/dark/checkbox_unselected.png';
+import checkbox_selected_light from './icons/light/checkbox_selected.png';
+import checkbox_unselected_light from './icons/light/checkbox_unselected.png';
 
 export {
   back_dark,
@@ -35,5 +39,9 @@ export {
   bottom_left_dark,
   bottom_left_light, 
   bottom_right_dark,
-  bottom_right_light
+  bottom_right_light,
+  checkbox_selected_light,
+  checkbox_selected_dark,
+  checkbox_unselected_dark,
+  checkbox_unselected_light
 };

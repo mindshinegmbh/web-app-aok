@@ -14,7 +14,7 @@ export const SelectTransformedSessionData = createSelector(SelectSessionData, (d
             cardType: value.card_type,
             audio_url: value.audio_file,
             inputs: value.inputs,
-            inputType: ""
+            inputType: "checkbox"
         }
         return card
     })
