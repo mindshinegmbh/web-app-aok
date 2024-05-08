@@ -1,6 +1,5 @@
 import React from 'react';
-import { InputCheckboxParent, TextAreaParent } from './styles';
-import { useBaseProps } from 'hocs/base_component';
+import { InputCheckboxParent } from './styles';
 import { InputType } from 'utils/constants';
 import CustomTextArea from 'components/custom_textarea';
 import Checkbox from 'components/checkbox';
@@ -11,7 +10,6 @@ interface InputProps {
 }
 
 const InputsComponent = (props: InputProps) => {
-  const { currentTheme, currentFont, t } = useBaseProps();
 
   return (
     <>
@@ -19,8 +17,8 @@ const InputsComponent = (props: InputProps) => {
         <CustomTextArea placeholder={'session.textfield'} />
       ) : props.inputType === InputType.checkbox ? (
         <InputCheckboxParent>
-          {props.inputs.map((checkbox) => (
-            <Checkbox value={checkbox} selected={false} />
+          {props.inputs.map((checkbox, index) => (
+            <Checkbox key={index} value={checkbox} selected={false} />
           ))}
         </InputCheckboxParent>
       ) : props.inputType === InputType.radio ? (

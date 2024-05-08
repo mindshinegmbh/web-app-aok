@@ -1,6 +1,6 @@
 import React, { MouseEvent, useState } from 'react';
 import { CheckBoxParent, TextParent } from './styles';
-import { RegularText, SmallText } from '../../styling/common';
+import {  SmallText } from '../../styling/common';
 import Icon from '../icon';
 import { useBaseProps } from 'hocs/base_component';
 
@@ -10,10 +10,9 @@ interface CheckboxProps {
 }
 
 const Checkbox = (props: CheckboxProps) => {
-  const { t, currentFont, currentSizes, currentTheme } = useBaseProps();
+  const { currentFont, currentSizes, currentTheme } = useBaseProps();
   const [selected, setSelected] = useState(false);
-  const ref = React.useRef(null);
-
+  
   const getAltText = () => (selected ? 'Selected Checkbox' : 'Unseletec Checkbox');
 
   const onClickCheckbox = (e: MouseEvent) => {

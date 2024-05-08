@@ -10,8 +10,8 @@ interface CustomTextAreaProps extends AriaTextFieldProps {
 
 const CustomTextArea = (props: CustomTextAreaProps) => {
   const { currentTheme, t } = useBaseProps();
-  let ref = React.useRef(null);
-  let { inputProps } = useTextField(
+  const ref = React.useRef(null);
+  const { inputProps } = useTextField(
     {
       ...props,
       inputElementType: 'textarea',
