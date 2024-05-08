@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { InputCheckboxParent } from './styles';
 import { InputType } from 'utils/constants';
 import CustomTextArea from 'components/custom_textarea';
@@ -11,8 +11,6 @@ interface InputProps {
 }
 
 const InputsComponent = (props: InputProps) => {
-  const [radioButtonData , setRadioButtonData] = useState([])
-  
   
   return (
     <>
