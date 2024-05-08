@@ -1,16 +1,17 @@
 import React from 'react';
 import { Card } from 'models/session_type';
 import { LargeText, SmallText } from 'styling/common';
-import { CardParent, CenterTextParent, TextAreaParent, UlParent } from './styles';
+import { CardParent, CenterTextParent, UlParent } from './styles';
 import AudioPlayer from 'components/audio_player';
 import { useBaseProps } from 'hocs/base_component';
+import InputsComponent from './inputs';
 
 interface CardProps {
   card: Card;
 }
 
 const CardComponent = (props: CardProps) => {
-  const { currentTheme, currentFont, t } = useBaseProps();
+  const { currentTheme, currentFont } = useBaseProps();
 
   return (
     <CardParent>
@@ -42,13 +43,7 @@ const CardComponent = (props: CardProps) => {
             );
           })}
         </UlParent>
-        <TextAreaParent
-          $textColor={currentTheme.colors.text_field_place_holder}
-          $backgroundColor={currentTheme.colors.field_background_color}
-          color={currentTheme.colors.text_field_place_holder}          
-          rows={10} 
-          placeholder={t('session.textfield')}
-        />
+       <InputsComponent inputType={props.card.inputType} inputs={["First", "Second", "Third", "Fourth"]} />
       </CenterTextParent>
     </CardParent>
   );

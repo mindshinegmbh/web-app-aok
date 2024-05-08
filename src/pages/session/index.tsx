@@ -11,31 +11,32 @@ import { BottomContentParent, MainContentParent } from './styles';
 import { useBaseProps } from 'hocs/base_component';
 
 function Session() {
-  const {currentTheme} = useBaseProps()
+  const { currentTheme } = useBaseProps();
   const sessionData = useAppSelector(SelectTransformedSessionData);
-  const swiperRef = useRef<SwiperRef>(null)
-  
+  const swiperRef = useRef<SwiperRef>(null);
+  console.log(sessionData);
+
   return (
     <>
       <MainContentParent>
-        <Swiper  ref={swiperRef}>
+        <Swiper ref={swiperRef} >
           {sessionData?.cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <CardComponent card={card} />
+              <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
+                <BottomBar
+                  letfOnClick={() => {
+                    swiperRef?.current?.swiper?.slidePrev();
+                  }}
+                  rightOnClick={() => {
+                    swiperRef?.current?.swiper?.slideNext();
+                  }}
+                />
+              </BottomContentParent>
             </SwiperSlide>
           ))}
         </Swiper>
       </MainContentParent>
-      <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
-        <BottomBar
-          letfOnClick={() => {
-            swiperRef?.current?.swiper?.slidePrev()
-          }}
-          rightOnClick={() => {
-            swiperRef?.current?.swiper?.slideNext()
-          }}
-        />
-      </BottomContentParent>
     </>
   );
 }
