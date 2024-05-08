@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { InputCheckboxParent } from './styles';
 import { InputType } from 'utils/constants';
 import CustomTextArea from 'components/custom_textarea';
 import Checkbox from 'components/checkbox';
+import RadioButton from 'components/radiobutton';
 
 interface InputProps {
   inputType: string;
@@ -10,7 +11,9 @@ interface InputProps {
 }
 
 const InputsComponent = (props: InputProps) => {
-
+  const [radioButtonData , setRadioButtonData] = useState([])
+  
+  
   return (
     <>
       {props.inputType === InputType.text ? (
@@ -22,7 +25,11 @@ const InputsComponent = (props: InputProps) => {
           ))}
         </InputCheckboxParent>
       ) : props.inputType === InputType.radio ? (
-        <div></div>
+        <InputCheckboxParent>
+          {props.inputs.map((checkbox, index) => (
+            <RadioButton key={index} value={checkbox} selected={false} />
+          ))}
+        </InputCheckboxParent>
       ) : (
         <div></div>
       )}

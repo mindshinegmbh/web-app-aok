@@ -21,7 +21,11 @@ import {
   checkbox_selected_dark,
   checkbox_selected_light,
   checkbox_unselected_dark,
-  checkbox_unselected_light
+  checkbox_unselected_light,
+  radiobutton_selected_dark,
+  radiobutton_selected_light,
+  radiobutton_unselected_dark,
+  radiobutton_unselected_light
 } from '../images';
 
 export const DARK = 'dark';
@@ -92,6 +96,8 @@ export interface IconType {
   bottom_bar_right: string;
   checkbox_selected: string;
   checkbox_unselected: string;
+  radiobutton_selected: string;
+  radiobutton_unselected: string;
 }
 
 export interface ImageSize {
@@ -164,7 +170,9 @@ const Themes: ThemeType = {
       bottom_bar_left: bottom_left_light,
       bottom_bar_right: bottom_right_light,
       checkbox_selected: checkbox_selected_light,
-      checkbox_unselected: checkbox_unselected_light
+      checkbox_unselected: checkbox_unselected_light,
+      radiobutton_selected: radiobutton_selected_light,
+      radiobutton_unselected: radiobutton_unselected_light
     },
   },
   dark: {
@@ -198,7 +206,9 @@ const Themes: ThemeType = {
       bottom_bar_left: bottom_left_dark,
       bottom_bar_right: bottom_right_dark,
       checkbox_selected: checkbox_selected_dark,
-      checkbox_unselected: checkbox_unselected_dark
+      checkbox_unselected: checkbox_unselected_dark,
+      radiobutton_selected: radiobutton_selected_dark,
+      radiobutton_unselected: radiobutton_unselected_dark
     },
   },
 };

@@ -20,6 +20,10 @@ import checkbox_selected_dark from './icons/dark/checkbox_selected.png';
 import checkbox_unselected_dark from './icons/dark/checkbox_unselected.png';
 import checkbox_selected_light from './icons/light/checkbox_selected.png';
 import checkbox_unselected_light from './icons/light/checkbox_unselected.png';
+import radiobutton_unselected_light from './icons/light/radio_button_unselected.png';
+import radiobutton_unselected_dark from './icons/dark/radio_button_unselected.png';
+import radiobutton_selected_light from './icons/light/radio_button.png';
+import radiobutton_selected_dark from './icons/dark/radio_button.png';
 
 export {
   back_dark,
@@ -43,5 +47,9 @@ export {
   checkbox_selected_light,
   checkbox_selected_dark,
   checkbox_unselected_dark,
-  checkbox_unselected_light
+  checkbox_unselected_light,
+  radiobutton_selected_dark,
+  radiobutton_selected_light,
+  radiobutton_unselected_dark,
+  radiobutton_unselected_light
 };
