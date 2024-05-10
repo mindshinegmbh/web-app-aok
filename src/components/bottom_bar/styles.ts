@@ -5,7 +5,10 @@ const BottomBarParent = styled.div`
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1em 0.25em 1em;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 
 export { BottomBarParent };

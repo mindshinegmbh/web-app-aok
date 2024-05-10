@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { BackParent } from './styles';
+import { BackParent, TextParent } from './styles';
 import { RegularText } from '../../styling/common';
 import Icon from '../icon';
 import { useLink } from 'react-aria';
@@ -24,12 +24,14 @@ const Back = () => {
         alt='back button'
         link={currentTheme.icons.back}
       />
-      <RegularText
-        $textSize={currentFont.regular_font_size}
-        $textColor={currentTheme.colors.settings_text_color}
-      >
-        {t('header.back')}
-      </RegularText>
+      <TextParent>
+        <RegularText
+          $textSize={currentFont.regular_font_size}
+          $textColor={currentTheme.colors.settings_text_color}
+        >
+          {t('header.back')}
+        </RegularText>
+      </TextParent>
     </BackParent>
   );
 };

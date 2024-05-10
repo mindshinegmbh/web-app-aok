@@ -1,14 +1,24 @@
 import styled from 'styled-components';
+import { SwiperSlide } from 'swiper/react';
 
 const MainContentParent = styled.div`
   display: flex;
-  flex: 0.9;
+  flex: 1;
+`;
+
+const BodyTextParent = styled.div`
+  margin-top: 24px;
+  text-align: justify;
 `;
 
 const BottomContentParent = styled.div<{ $backgroundColor: string }>`
   display: flex;
-  flex: 0.1;
+  flex: 1;
   background-color: ${(props) => props.$backgroundColor};
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 `;
 
 const Session = styled.div`
@@ -16,7 +26,6 @@ const Session = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1em 0.25em 1em;
 `;
 
 const CardParent = styled.div`
@@ -24,14 +33,16 @@ const CardParent = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1em 0.25em 1em;
+  margin-top: 15px;
 `;
 
 const CenterTextParent = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1em 0.25em 1em;
+  margin-top: 34px;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 
 const UlParent = styled.ul<{ $textColor: string }>`
@@ -59,6 +70,26 @@ const InputCheckboxParent = styled.div`
   flex-direction: column;
 `;
 
+const FixedSlide = styled(SwiperSlide)`
+  height: 250px;
+`;
+
+const MainSwipeContainer = styled.div`
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+`;
+const MainSwipeChild = styled.div`
+  display: flex;
+  transition: transform 0.3s ease;
+`;
+
+const Slide = styled.div`
+  flex: 1 0 100%;
+  min-width: 100%;
+  height: 90%;
+`;
+
 export {
   Session,
   CardParent,
@@ -68,5 +99,10 @@ export {
   MainContentParent,
   BottomContentParent,
   InputParent,
-  InputCheckboxParent
+  InputCheckboxParent,
+  BodyTextParent,
+  FixedSlide,
+  MainSwipeChild,
+  MainSwipeContainer,
+  Slide
 };

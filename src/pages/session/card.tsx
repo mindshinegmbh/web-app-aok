@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'models/session_type';
 import { LargeText, SmallText } from 'styling/common';
-import { CardParent, CenterTextParent, UlParent } from './styles';
+import { BodyTextParent, CardParent, CenterTextParent, UlParent } from './styles';
 import AudioPlayer from 'components/audio_player';
 import { useBaseProps } from 'hocs/base_component';
 import InputsComponent from './inputs';
@@ -23,12 +23,14 @@ const CardComponent = (props: CardProps) => {
         >
           {props.card.title}
         </LargeText>
-        <SmallText
-          $textSize={currentFont.small_font}
-          $textColor={currentTheme.colors.all_white_color}
-        >
-          {props.card.body}
-        </SmallText>
+        <BodyTextParent>
+          <SmallText
+            $textSize={currentFont.small_font}
+            $textColor={currentTheme.colors.all_white_color}
+          >
+            {props.card.body}
+          </SmallText>
+        </BodyTextParent>
         <UlParent $textColor={currentTheme.colors.all_white_color}>
           {props.card.bullet.map((bullet, index) => {
             return (
@@ -43,7 +45,15 @@ const CardComponent = (props: CardProps) => {
             );
           })}
         </UlParent>
-       <InputsComponent inputType={props.card.inputType} inputs={["First", "Second", "Third", "Fourth"]} />
+        <InputsComponent
+          inputType={props.card.inputType}
+          inputs={[
+            'First',
+            'Second',
+            'Third',
+            'Fourth',
+           ]}
+        />
       </CenterTextParent>
     </CardParent>
   );
