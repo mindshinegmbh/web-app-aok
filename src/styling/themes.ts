@@ -25,7 +25,9 @@ import {
   radiobutton_selected_dark,
   radiobutton_selected_light,
   radiobutton_unselected_dark,
-  radiobutton_unselected_light
+  radiobutton_unselected_light,
+  session_finish_dark,
+  session_finish_light,
 } from '../images';
 
 export const DARK = 'dark';
@@ -53,16 +55,16 @@ export const Fonts: FontVersion = {
     regular_font_size: '20px',
     xsmall_font_size: '14px',
     xsmall_font_weight: '700',
-    small_font: "20px",
-    large_font: "25px"
+    small_font: '20px',
+    large_font: '25px',
   },
   regular: {
     name: FONT_REGULAR,
     regular_font_size: '17px',
-    small_font: "14px",
+    small_font: '14px',
     xsmall_font_size: '8px',
     xsmall_font_weight: '400',
-    large_font: "18px"
+    large_font: '18px',
   },
 };
 interface ColorType {
@@ -77,11 +79,14 @@ interface ColorType {
   forward_backward_background: string;
   forward_backward_bordercolor: string;
   audio_player_text_color: string;
-  progress_bar_color: string
+  progress_bar_color: string;
   uncompleted_bar_color: string;
   all_white_color: string;
   text_field_place_holder: string;
-  field_background_color:string;
+  field_background_color: string;
+  button_background: string;
+  button_text: string;
+  range_bar: string;
 }
 
 export interface IconType {
@@ -98,6 +103,7 @@ export interface IconType {
   checkbox_unselected: string;
   radiobutton_selected: string;
   radiobutton_unselected: string;
+  session_finish: string;
 }
 
 export interface ImageSize {
@@ -114,7 +120,7 @@ export interface SizesType {
   play_button: ImageSize;
   pause_button: ImageSize;
   bottom_bar_buttons: ImageSize;
-  
+  session_finish: ImageSize;
 }
 export const ImageSizes: SizesType = {
   back: { width: '24px', height: '24px' },
@@ -125,6 +131,7 @@ export const ImageSizes: SizesType = {
   play_button: { width: '45px', height: '45px' },
   pause_button: { width: '45px', height: '45px' },
   bottom_bar_buttons: { width: '35px', height: '35px' },
+  session_finish: { width: '160px', height: '160px' },
 };
 
 export interface ThemeValuesType {
@@ -157,7 +164,10 @@ const Themes: ThemeType = {
       uncompleted_bar_color: Colors.grey_shade_1,
       all_white_color: Colors.white_shade_0,
       text_field_place_holder: Colors.green_shade_6,
-      field_background_color: Colors.white_shade_0
+      field_background_color: Colors.white_shade_0,
+      button_background: Colors.green_shade_4,
+      button_text: Colors.green_shade_6,
+      range_bar: Colors.green_shade_4,
     },
     icons: {
       back: back_light,
@@ -172,7 +182,8 @@ const Themes: ThemeType = {
       checkbox_selected: checkbox_selected_light,
       checkbox_unselected: checkbox_unselected_light,
       radiobutton_selected: radiobutton_selected_light,
-      radiobutton_unselected: radiobutton_unselected_light
+      radiobutton_unselected: radiobutton_unselected_light,
+      session_finish: session_finish_light,
     },
   },
   dark: {
@@ -193,7 +204,10 @@ const Themes: ThemeType = {
       uncompleted_bar_color: Colors.grey_shade_1,
       all_white_color: Colors.white_shade_0,
       text_field_place_holder: Colors.green_shade_6,
-      field_background_color: Colors.green_shade_5_opaque
+      field_background_color: Colors.green_shade_5_opaque,
+      button_background: Colors.green_shade_4,
+      button_text: Colors.green_shade_6,
+      range_bar: Colors.green_shade_4,
     },
     icons: {
       back: back_dark,
@@ -208,7 +222,8 @@ const Themes: ThemeType = {
       checkbox_selected: checkbox_selected_dark,
       checkbox_unselected: checkbox_unselected_dark,
       radiobutton_selected: radiobutton_selected_dark,
-      radiobutton_unselected: radiobutton_unselected_dark
+      radiobutton_unselected: radiobutton_unselected_dark,
+      session_finish: session_finish_dark,
     },
   },
 };

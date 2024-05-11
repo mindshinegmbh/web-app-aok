@@ -1,4 +1,4 @@
-import React, {  useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
@@ -14,18 +14,22 @@ import {
   Slide,
 } from './styles';
 import { useBaseProps } from 'hocs/base_component';
+import { useNavigate } from 'react-router-dom';
 
 function Session() {
   const { currentTheme } = useBaseProps();
   const [currentIndex, setCurrentIndex] = useState(0);
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
+  const navigate = useNavigate();
   console.log(sessionData);
 
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {
       setCurrentIndex(currentIndex + 1);
+    } else {
+      navigate('/session_finish');
     }
   };
 

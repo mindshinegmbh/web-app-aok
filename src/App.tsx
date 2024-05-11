@@ -7,6 +7,7 @@ import { SelectFont, SelectTheme } from './localredux/theme/selectors';
 import { getFontObjectAgaisntString, getThemeObjectAgaisntString } from './utils/general_utils';
 import Settings from 'pages/settings';
 import Session  from 'pages/session';
+import Sessionfinish from 'pages/sessionfinish';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path='/settings' element={<Settings isSettingsVisible={false}/>} />
               <Route path='/home' element={<Home isSettingsVisible/>} />
               <Route path='/session' element={<Session isSettingsVisible/>} />
+              <Route path='/session_finish' element={<Sessionfinish isSettingsVisible/>} />
             </Routes>
           </FontContext.Provider>
         </ThemeContext.Provider>

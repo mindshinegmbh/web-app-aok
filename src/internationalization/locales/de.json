@@ -19,5 +19,16 @@
   },
   "session": {
     "textfield": "Schreibe deine Antwort hier... "
+  },
+  "session_finish": {
+    "heading": "Glückwunsch!",
+    "body": "Du hast die Übung abgeschlossen. \nWeiter so!\n\nWie würdest du die Übung bewerten?",
+    "bad": "Schlecht",
+    "ok": "Okay",
+    "sehr_gut": "Sehr Gut",
+    "open": "Schicke uns detaillierteres feedback",
+    "close": "Schließe das Feedback Fenster",
+    "feedback": "Schreibe dein detailliertes Feedback hier.... ",
+    "button": "Übung beenden"
   }
 }

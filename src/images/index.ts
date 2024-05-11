@@ -24,6 +24,8 @@ import radiobutton_unselected_light from './icons/light/radio_button_unselected.
 import radiobutton_unselected_dark from './icons/dark/radio_button_unselected.png';
 import radiobutton_selected_light from './icons/light/radio_button.png';
 import radiobutton_selected_dark from './icons/dark/radio_button.png';
+import session_finish_dark from './icons/dark/session_finish.png';
+import session_finish_light from './icons/light/session_finish.png';
 
 export {
   back_dark,
@@ -51,5 +53,7 @@ export {
   radiobutton_selected_dark,
   radiobutton_selected_light,
   radiobutton_unselected_dark,
-  radiobutton_unselected_light
+  radiobutton_unselected_light,
+  session_finish_dark,
+  session_finish_light
 };

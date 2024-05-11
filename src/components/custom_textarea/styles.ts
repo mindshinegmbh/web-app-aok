@@ -8,7 +8,7 @@ const TextAreaParent = styled.textarea<{ $textColor: string; $backgroundColor: s
   border-radius: 15px;
   border-color: ${(props) => props.$backgroundColor};
   padding: 10px;
-
+  width: 100%;
 `;
 
 export { TextAreaParent };
