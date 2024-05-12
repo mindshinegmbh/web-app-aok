@@ -26,6 +26,18 @@ import radiobutton_selected_light from './icons/light/radio_button.png';
 import radiobutton_selected_dark from './icons/dark/radio_button.png';
 import session_finish_dark from './icons/dark/session_finish.png';
 import session_finish_light from './icons/light/session_finish.png';
+import info_light from './icons/light/info.png';
+import info_dark from './icons/dark/info.png';
+import badge_1_dark from './icons/dark/badge_1.png';
+import badge_1_light from './icons/light/badge_1.png';
+import badge_2_dark from './icons/dark/badge_2.png';
+import badge_2_light from './icons/light/badge_2.png';
+import badge_3_dark from './icons/dark/badge_3.png';
+import badge_3_light from './icons/light/badge_3.png';
+import badge_4_dark from './icons/dark/badge_4.png';
+import badge_4_light from './icons/light/badge_4.png';
+import close_light from './icons/light/close.png';
+import close_dark from './icons/dark/close.png';
 
 export {
   back_dark,
@@ -43,7 +55,7 @@ export {
   pause_dark,
   pause_light,
   bottom_left_dark,
-  bottom_left_light, 
+  bottom_left_light,
   bottom_right_dark,
   bottom_right_light,
   checkbox_selected_light,
@@ -55,5 +67,17 @@ export {
   radiobutton_unselected_dark,
   radiobutton_unselected_light,
   session_finish_dark,
-  session_finish_light
+  session_finish_light,
+  info_dark,
+  info_light,
+  badge_1_dark,
+  badge_1_light,
+  badge_2_dark,
+  badge_2_light,
+  badge_3_dark,
+  badge_3_light,
+  badge_4_dark,
+  badge_4_light,
+  close_dark,
+  close_light,
 };

@@ -28,6 +28,18 @@ import {
   radiobutton_unselected_light,
   session_finish_dark,
   session_finish_light,
+  info_dark,
+  info_light,
+  badge_1_dark,
+  badge_1_light,
+  badge_2_dark,
+  badge_2_light,
+  badge_3_dark,
+  badge_3_light,
+  badge_4_dark,
+  badge_4_light,
+  close_dark,
+  close_light,
 } from '../images';
 
 export const DARK = 'dark';
@@ -42,6 +54,7 @@ interface FontSizes {
   xsmall_font_weight: string;
   small_font: string;
   large_font: string;
+  xlarge_font: string;
 }
 
 interface FontVersion {
@@ -57,14 +70,16 @@ export const Fonts: FontVersion = {
     xsmall_font_weight: '700',
     small_font: '20px',
     large_font: '25px',
+    xlarge_font: '30px',
   },
   regular: {
     name: FONT_REGULAR,
-    regular_font_size: '17px',
+    regular_font_size: '16px',
     small_font: '14px',
     xsmall_font_size: '8px',
     xsmall_font_weight: '400',
     large_font: '18px',
+    xlarge_font: '30px',
   },
 };
 interface ColorType {
@@ -87,6 +102,8 @@ interface ColorType {
   button_background: string;
   button_text: string;
   range_bar: string;
+  gesundheit_link_color: string;
+  modal_text: string;
 }
 
 export interface IconType {
@@ -104,6 +121,9 @@ export interface IconType {
   radiobutton_selected: string;
   radiobutton_unselected: string;
   session_finish: string;
+  info: string;
+  badges: string[];
+  close: string;
 }
 
 export interface ImageSize {
@@ -168,6 +188,8 @@ const Themes: ThemeType = {
       button_background: Colors.green_shade_4,
       button_text: Colors.green_shade_6,
       range_bar: Colors.green_shade_4,
+      gesundheit_link_color: Colors.green_shade_4,
+      modal_text: Colors.green_shade_6,
     },
     icons: {
       back: back_light,
@@ -184,6 +206,9 @@ const Themes: ThemeType = {
       radiobutton_selected: radiobutton_selected_light,
       radiobutton_unselected: radiobutton_unselected_light,
       session_finish: session_finish_light,
+      info: info_light,
+      badges: [badge_1_light, badge_2_light, badge_3_light, badge_4_light],
+      close: close_light,
     },
   },
   dark: {
@@ -208,6 +233,8 @@ const Themes: ThemeType = {
       button_background: Colors.green_shade_4,
       button_text: Colors.green_shade_6,
       range_bar: Colors.green_shade_4,
+      gesundheit_link_color: Colors.green_shade_4,
+      modal_text: Colors.green_shade_6,
     },
     icons: {
       back: back_dark,
@@ -224,6 +251,9 @@ const Themes: ThemeType = {
       radiobutton_selected: radiobutton_selected_dark,
       radiobutton_unselected: radiobutton_unselected_dark,
       session_finish: session_finish_dark,
+      info: info_dark,
+      badges: [badge_1_dark, badge_2_dark, badge_3_dark, badge_4_dark],
+      close: close_dark,
     },
   },
 };

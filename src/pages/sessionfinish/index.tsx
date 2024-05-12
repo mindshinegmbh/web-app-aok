@@ -16,11 +16,13 @@ import Icon from 'components/icon';
 import CustomTextArea from 'components/custom_textarea';
 import CustomButton from 'components/custom_button';
 import RangeBar from 'components/range_bar';
+import { useNavigate } from 'react-router-dom';
 
 function SessionFinish() {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
   const [range, setRange] = useState(0);
   const [showFenster, setShowFenster] = useState(false);
+  const navigate = useNavigate();
 
   const onClickFenster = (e: MouseEvent) => {
     e.preventDefault();
@@ -90,7 +92,10 @@ function SessionFinish() {
       </FeedbackParent>
 
       <ButtonParent>
-        <CustomButton text={t('session_finish.button')} />
+        <CustomButton
+          onClick={() => navigate('/mental_gesundheit')}
+          text={t('session_finish.button')}
+        />
       </ButtonParent>
     </SessionFinishParent>
   );

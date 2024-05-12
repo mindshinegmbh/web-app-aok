@@ -15,7 +15,6 @@
     "forward_text": "+15s",
     "backward_text": "-15s",
     "progress_text": "{{remaining}} von {{out}}"
-    
   },
   "session": {
     "textfield": "Schreibe deine Antwort hier... "
@@ -30,5 +29,27 @@
     "close": "Schließe das Feedback Fenster",
     "feedback": "Schreibe dein detailliertes Feedback hier.... ",
     "button": "Übung beenden"
+  },
+  "mental_gesundheit": {
+    "heading": "Mentale Gesundheit",
+    "body_text_1": "Deine Mentaler Gesundheitsindex",
+    "body_text_2": "Den Test wiederholen",
+    "body_text_3": " und dein Ergebnis aktualisieren.",
+    "body_text_4": "Du hast",
+    "body_text_5": " Challenges abgeschlossen",
+    "body_text_6": " Übungen geschafft.",
+    "body_text_7": " in den letzten 30 Tagen trainiert.",
+    "body_text_8": "Trainginsminuten gesammelt Wustest du, dass du damit in den Top 25% unserer user bist, die dieser Challenge ebenfalls absolvieren.",
+    "heading_2": "Deine Trophäen:",
+    "badge_1": "Morge-Vogel",
+    "badge_2": "Gedanken-Gärtner",
+    "badge_3": "Challenge-Initiator",
+    "badge_4": "10-Tage Triumph",
+    "feedback": "Feedback:",
+    "feedback_placeholder": "Schreib uns:\n\nDu kannst uns hier dein feedback schreiben.",
+    "send": "Senden",
+    "danke": "Danke für dein Feedback!",
+    "trophy_info_heading": "Deine Mentaler Gesundheitsindex",
+    "trophy_info_body": "Bitte denk daran, dass dein Mentaler Gesundheitsindex eine subjektive Momentaufnahme deiner aktuellen Befindlichkeit ist und sich natürlich verändern kann. Wir verwenden diesen Wert lediglich als einen ersten Richtwert, um deine Fortschritte im Laufe des Programms besser nachvollziehen zu können. Es ist wichtig zu verstehen, dass dieser Index keine medizinische Diagnose darstellt, sondern ein Werkzeug ist, das uns dabei hilft, die für dich passenden Inhalte und Übungen auszuwählen. Vergiss nicht: Persönliches Wachstum und Verbesserungen in deinem Wohlbefinden brauchen Zeit und Geduld. Jeder Schritt, den du machst, ist ein positiver Beitrag zu deiner mentalen Gesundheit."
   }
 }

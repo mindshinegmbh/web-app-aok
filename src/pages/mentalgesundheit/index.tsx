@@ -1,0 +1,238 @@
+import React, { useState } from 'react';
+import { LargeText, SmallText, XLargeText } from '../../styling/common';
+import withBase from 'hocs/base_page';
+import { useBaseProps } from 'hocs/base_component';
+import {
+  Bold,
+  ButtonParent,
+  Divider,
+  FeedbackParent,
+  IconTextChild,
+  IconTextParent,
+  IndexFifthChild,
+  IndexFirstChild,
+  IndexFourthChild,
+  IndexInfoParent,
+  IndexNumberParent,
+  IndexSecondChild,
+  IndexThirdChild,
+  Link,
+  MentalGesundheitParent,
+  TextSpaceLeft,
+} from './styles';
+import Icon from 'components/icon';
+import CustomTextArea from 'components/custom_textarea';
+import CustomButton from 'components/custom_button';
+import TrophyInfoModal from './trophy_info_modal';
+import CustomLink from 'components/custom_link';
+
+function MentalGesundheit() {
+  const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
+  const [done, setDone] = useState(false);
+  const [showTrophyInfo, setShowTrophyInfo] = useState(false);
+
+  const onClickSend = () => {
+    setDone(true);
+  };
+
+  const hideTrophyInfoModal = () => {
+    setShowTrophyInfo(false);
+  };
+  const showTrophyInfoModal = () => {
+    setShowTrophyInfo(true);
+  };
+  return (
+    <MentalGesundheitParent $backgroundColor={currentTheme.colors.screen_background}>
+      <TrophyInfoModal show={showTrophyInfo} hideModal={hideTrophyInfoModal} />
+      <XLargeText
+        $textSize={currentFont.xlarge_font}
+        $textColor={currentTheme.colors.all_white_color}
+      >
+        {t('mental_gesundheit.heading')}
+      </XLargeText>
+      <IndexInfoParent>
+        <LargeText
+          $textSize={currentFont.large_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.body_text_1')}
+        </LargeText>
+        <CustomLink
+          link={currentTheme.icons.info}
+          alt={'info button 1'}
+          width={currentSizes.back.width}
+          height={currentSizes.back.height}
+          href={'#'}
+          onCustomPress={showTrophyInfoModal}
+        />
+      </IndexInfoParent>
+      <IndexNumberParent>
+        <LargeText
+          $textSize={currentFont.large_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          86
+        </LargeText>
+      </IndexNumberParent>
+      <IndexFirstChild>
+        <SmallText
+          $textSize={currentFont.small_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          <Link $textColor={currentTheme.colors.gesundheit_link_color}>
+            {t('mental_gesundheit.body_text_2')}
+          </Link>
+          {t('mental_gesundheit.body_text_3')}
+        </SmallText>
+      </IndexFirstChild>
+      <IndexSecondChild>
+        <SmallText
+          $textSize={currentFont.small_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.body_text_4')} <Bold>8</Bold>
+          {t('mental_gesundheit.body_text_5')}
+        </SmallText>
+      </IndexSecondChild>
+      <IndexThirdChild>
+        <SmallText
+          $textSize={currentFont.small_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.body_text_4')} <Bold>43</Bold>
+          {t('mental_gesundheit.body_text_6')}
+        </SmallText>
+      </IndexThirdChild>
+      <IndexFourthChild>
+        <SmallText
+          $textSize={currentFont.small_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.body_text_4')} <Bold>329</Bold>
+          {t('mental_gesundheit.body_text_7')}
+        </SmallText>
+      </IndexFourthChild>
+      <IndexFifthChild>
+        <SmallText
+          $textSize={currentFont.small_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.body_text_8')}
+        </SmallText>
+      </IndexFifthChild>
+      <Divider $backgroundColor={currentTheme.colors.all_white_color} />
+      <IndexInfoParent>
+        <LargeText
+          $textSize={currentFont.large_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.heading_2')}
+        </LargeText>
+        <Icon
+          link={currentTheme.icons.info}
+          alt={'info button 2'}
+          width={currentSizes.back.width}
+          height={currentSizes.back.height}
+        />
+      </IndexInfoParent>
+      <IconTextParent>
+        <IconTextChild>
+          <Icon
+            link={currentTheme.icons.badges[0]}
+            alt={t('mental_gesundheit.badge_2')}
+            width={currentSizes.back.width}
+            height={currentSizes.back.height}
+          />
+          <TextSpaceLeft>
+            <SmallText
+              $textSize={currentFont.small_font}
+              $textColor={currentTheme.colors.all_white_color}
+            >
+              {t('mental_gesundheit.badge_1')}
+            </SmallText>
+          </TextSpaceLeft>
+        </IconTextChild>
+        <IconTextChild>
+          <Icon
+            link={currentTheme.icons.badges[3]}
+            alt={t('mental_gesundheit.badge_2')}
+            width={currentSizes.back.width}
+            height={currentSizes.back.height}
+          />
+          <TextSpaceLeft>
+            <SmallText
+              $textSize={currentFont.small_font}
+              $textColor={currentTheme.colors.all_white_color}
+            >
+              {t('mental_gesundheit.badge_2')}
+            </SmallText>
+          </TextSpaceLeft>
+        </IconTextChild>
+      </IconTextParent>
+      <IconTextParent>
+        <IconTextChild>
+          <Icon
+            link={currentTheme.icons.badges[2]}
+            alt={t('mental_gesundheit.badge_1')}
+            width={currentSizes.back.width}
+            height={currentSizes.back.height}
+          />
+          <TextSpaceLeft>
+            <SmallText
+              $textSize={currentFont.small_font}
+              $textColor={currentTheme.colors.all_white_color}
+            >
+              {t('mental_gesundheit.badge_3')}
+            </SmallText>
+          </TextSpaceLeft>
+        </IconTextChild>
+        <IconTextChild>
+          <Icon
+            link={currentTheme.icons.badges[1]}
+            alt={t('mental_gesundheit.badge_4')}
+            width={currentSizes.back.width}
+            height={currentSizes.back.height}
+          />
+          <TextSpaceLeft>
+            <SmallText
+              $textSize={currentFont.small_font}
+              $textColor={currentTheme.colors.all_white_color}
+            >
+              {t('mental_gesundheit.badge_4')}
+            </SmallText>
+          </TextSpaceLeft>
+        </IconTextChild>
+      </IconTextParent>
+      <Divider $backgroundColor={currentTheme.colors.all_white_color} />
+      <IndexInfoParent>
+        <LargeText
+          $textSize={currentFont.large_font}
+          $textColor={currentTheme.colors.all_white_color}
+        >
+          {t('mental_gesundheit.feedback')}
+        </LargeText>
+      </IndexInfoParent>
+
+      {!done && (
+        <FeedbackParent>
+          <CustomTextArea placeholder={t('mental_gesundheit.feedback_placeholder')} />
+        </FeedbackParent>
+      )}
+      {done && (
+        <FeedbackParent>
+          <LargeText
+            $textSize={currentFont.large_font}
+            $textColor={currentTheme.colors.all_white_color}
+          >
+            {t('mental_gesundheit.danke')}
+          </LargeText>
+        </FeedbackParent>
+      )}
+      <ButtonParent>
+        {<CustomButton onClick={() => onClickSend()} text={t('mental_gesundheit.send')} />}
+      </ButtonParent>
+    </MentalGesundheitParent>
+  );
+}
+
+export default withBase(MentalGesundheit);

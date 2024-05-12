@@ -6,9 +6,9 @@ import { useAppSelector } from './localredux/hooks';
 import { SelectFont, SelectTheme } from './localredux/theme/selectors';
 import { getFontObjectAgaisntString, getThemeObjectAgaisntString } from './utils/general_utils';
 import Settings from 'pages/settings';
-import Session  from 'pages/session';
+import Session from 'pages/session';
 import Sessionfinish from 'pages/sessionfinish';
-
+import Mentalgesundheit from 'pages/mentalgesundheit';
 
 function App() {
   const theme = useAppSelector(SelectTheme);
@@ -19,11 +19,15 @@ function App() {
         <ThemeContext.Provider value={getThemeObjectAgaisntString(theme)}>
           <FontContext.Provider value={getFontObjectAgaisntString(font)}>
             <Routes>
-              <Route path='/' element={<Home isSettingsVisible/>} />
-              <Route path='/settings' element={<Settings isSettingsVisible={false}/>} />
-              <Route path='/home' element={<Home isSettingsVisible/>} />
-              <Route path='/session' element={<Session isSettingsVisible/>} />
-              <Route path='/session_finish' element={<Sessionfinish isSettingsVisible/>} />
+              <Route path='/' element={<Home isSettingsVisible />} />
+              <Route path='/settings' element={<Settings isSettingsVisible={false} />} />
+              <Route path='/home' element={<Home isSettingsVisible />} />
+              <Route path='/session' element={<Session isSettingsVisible />} />
+              <Route path='/session_finish' element={<Sessionfinish isSettingsVisible />} />
+              <Route
+                path='/mental_gesundheit'
+                element={<Mentalgesundheit isSettingsVisible={false} />}
+              />
             </Routes>
           </FontContext.Provider>
         </ThemeContext.Provider>

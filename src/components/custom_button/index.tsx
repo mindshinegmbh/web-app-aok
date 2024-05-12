@@ -5,15 +5,15 @@ import { useBaseProps } from 'hocs/base_component';
 
 interface CustomButtonProps {
   text: string;
+  onClick: () => void;
 }
 
 const CustomButton = (props: CustomButtonProps) => {
   const { currentFont, currentTheme } = useBaseProps();
 
-  const onClickCheckbox = () => {};
   return (
     <ButtonParent
-      onClick={() => onClickCheckbox()}
+      onClick={() => props.onClick()}
       $backgroundColor={currentTheme.colors.button_background}
     >
       <SmallText $textSize={currentFont.small_font} $textColor={currentTheme.colors.button_text}>
