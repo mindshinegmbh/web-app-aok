@@ -19,6 +19,7 @@ export interface CardServerObject {
   audio_file: string;
   card_type: string;
   inputs: [];
+  inputType: string;
 }
 
 export interface Session {

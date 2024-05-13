@@ -3,8 +3,6 @@ import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
 import CardComponent from './card';
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
 import BottomBar from 'components/bottom_bar';
 import {
   BottomContentParent,
