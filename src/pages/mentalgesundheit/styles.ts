@@ -20,10 +20,6 @@ const IndexInfoParent = styled.div`
   font-weight: 700;
 `;
 
-const Bold = styled.span`
-  font-weight: 700;
-`;
-
 const IndexNumberParent = styled.div`
   display: flex;
   flex: 1;
@@ -139,6 +135,14 @@ const TrophyInfoHeading = styled.div`
   margin-bottom: 16px;
 `;
 
+const UlParent = styled.ul<{ $textColor: string }>`
+  color: ${(props) => props.$textColor};
+`;
+
+const LiParent = styled.li`
+  margin-top: 15px;
+`;
+
 export {
   MentalGesundheitParent,
   FeedbackParent,
@@ -151,7 +155,6 @@ export {
   IndexThirdChild,
   IndexSecondChild,
   IndexFourthChild,
-  Bold,
   Link,
   Divider,
   IconTextChild,
@@ -160,4 +163,6 @@ export {
   CloseParent,
   TrophyInfoHeading,
   TrophyInfoParent,
+  UlParent,
+  LiParent
 };

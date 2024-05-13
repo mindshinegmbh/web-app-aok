@@ -1,6 +1,6 @@
+import React from 'react';
 import CustomLink from 'components/custom_link';
 import { useBaseProps } from 'hocs/base_component';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { LargeText, RegularText } from 'styling/common';
 import { CloseParent, TrophyInfoHeading, TrophyInfoParent } from './styles';

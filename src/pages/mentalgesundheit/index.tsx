@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { LargeText, SmallText, XLargeText } from '../../styling/common';
+import { Bold, LargeText, SmallText, XLargeText } from '../../styling/common';
 import withBase from 'hocs/base_page';
 import { useBaseProps } from 'hocs/base_component';
 import {
-  Bold,
   ButtonParent,
   Divider,
   FeedbackParent,
@@ -25,11 +24,13 @@ import CustomTextArea from 'components/custom_textarea';
 import CustomButton from 'components/custom_button';
 import TrophyInfoModal from './trophy_info_modal';
 import CustomLink from 'components/custom_link';
+import TrophyDetailsModal from './trophy_details_modal';
 
 function MentalGesundheit() {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
   const [done, setDone] = useState(false);
   const [showTrophyInfo, setShowTrophyInfo] = useState(false);
+  const [showTrophyDetails, setShowTrophyDetails] = useState(false);
 
   const onClickSend = () => {
     setDone(true);
@@ -41,9 +42,17 @@ function MentalGesundheit() {
   const showTrophyInfoModal = () => {
     setShowTrophyInfo(true);
   };
+  const hideTrophyDetailsModal = () => {
+    setShowTrophyDetails(false);
+  };
+  const showTrophyDetailsModal = () => {
+    setShowTrophyDetails(true);
+  };
   return (
     <MentalGesundheitParent $backgroundColor={currentTheme.colors.screen_background}>
       <TrophyInfoModal show={showTrophyInfo} hideModal={hideTrophyInfoModal} />
+      <TrophyDetailsModal show={showTrophyDetails} hideModal={hideTrophyDetailsModal} />
+
       <XLargeText
         $textSize={currentFont.xlarge_font}
         $textColor={currentTheme.colors.all_white_color}
@@ -128,11 +137,13 @@ function MentalGesundheit() {
         >
           {t('mental_gesundheit.heading_2')}
         </LargeText>
-        <Icon
+        <CustomLink
           link={currentTheme.icons.info}
           alt={'info button 2'}
           width={currentSizes.back.width}
           height={currentSizes.back.height}
+          href={'#'}
+          onCustomPress={showTrophyDetailsModal}
         />
       </IndexInfoParent>
       <IconTextParent>

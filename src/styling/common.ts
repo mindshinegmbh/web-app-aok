@@ -52,6 +52,10 @@ const CustomATag = styled.a`
   text-decoration: none;
 `;
 
+const Bold = styled.span`
+  font-weight: 700;
+`;
+
 export {
   RegularText,
   RegularIcon,
@@ -61,4 +65,5 @@ export {
   LargeText,
   SmallText,
   XLargeText,
+  Bold
 };
