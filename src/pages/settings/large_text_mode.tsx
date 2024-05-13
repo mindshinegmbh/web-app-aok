@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { FONT_LARGE, FONT_REGULAR, FontContext, ThemeContext } from '../../styling/themes';
 import SettingsButton from 'components/settings_button';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { setFont } from '../../redux/theme';
-import { SelectFont } from '../../redux/theme/selectors';
+import { useAppDispatch, useAppSelector } from '../../localredux/hooks';
+import { setFont } from '../../localredux/theme';
+import { SelectFont } from '../../localredux/theme/selectors';
 
 
 const FontModeButton = () => {

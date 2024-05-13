@@ -4,8 +4,8 @@ import DarkModeButton from '../../../pages/settings/dark_mode';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { renderWithProviders } from '../../../utils/test_utils';
 import { DARK, LIGHT } from '../../../styling/themes';
-import { setupStore } from 'redux/store';
-import { setTheme } from 'redux/theme';
+import { setupStore } from 'localredux/store';
+import { setTheme } from 'localredux/theme';
 import { addI18nResources, initI18n } from '../../../utils/test_utils';
 describe('DarkModeButton', () => {
   beforeAll(() => {

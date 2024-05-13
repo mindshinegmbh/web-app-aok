@@ -1,6 +1,6 @@
 name: CI/CD Pipline Production
 on:
-  push:
+  pull_request:
     branches: [master]
 jobs:
   build:
@@ -24,13 +24,13 @@ jobs:
       - name: Run E2E Cypress
         uses: cypress-io/github-action@v6
         with:
-          build: yarn run build
-          start: yarn run start
+          build: yarn run build:production
+          start: yarn run start:production
           wait-on: http://localhost:3000
-      - name: Build for Staging
+      - name: Build for Production
         run: |
           unset CI
-          yarn build
+          yarn build:production
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:

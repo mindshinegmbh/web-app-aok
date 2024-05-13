@@ -4,10 +4,7 @@ on:
     branches-ignore:
       - '!master'
       - '!staging'
-  pull_request:
-    branches-ignore:
-      - '!master'
-      - '!staging'
+      - '!development'
 jobs:
   build:
     runs-on: ubuntu-latest

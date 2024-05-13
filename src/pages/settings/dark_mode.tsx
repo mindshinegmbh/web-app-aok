@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { DARK, LIGHT, ThemeContext } from '../../styling/themes';
 import SettingsButton from 'components/settings_button';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { setTheme } from '../../redux/theme';
-import { SelectTheme } from '../../redux/theme/selectors';
+import { useAppDispatch, useAppSelector } from '../../localredux/hooks';
+import { setTheme } from '../../localredux/theme';
+import { SelectTheme } from '../../localredux/theme/selectors';
 
 
 const DarkModeButton = () => {

@@ -2,8 +2,8 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import createSagaMiddleware from '@redux-saga/core';
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import commonReducer from './common';
 import themeReducer from './theme';
+import sessionReducer from './session';
 import sagas from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -14,8 +14,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  common: commonReducer,
   theme: themeReducer,
+  session: sessionReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

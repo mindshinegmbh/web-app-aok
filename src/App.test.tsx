@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import App from './App';
-import { setupStore } from './redux/store';
+import { setupStore } from './localredux/store';
 import { addI18nResources, renderWithProviders } from './utils/test_utils';
 import { initI18n } from './utils/test_utils';
 

@@ -6,8 +6,8 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import de from '../internationalization/locales/de.json';
 
-import type { AppStore, RootState } from '../redux/store';
-import { setupStore } from '../redux/store';
+import type { AppStore, RootState } from '../localredux/store';
+import { setupStore } from '../localredux/store';
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: Partial<RootState>;
   store?: AppStore;

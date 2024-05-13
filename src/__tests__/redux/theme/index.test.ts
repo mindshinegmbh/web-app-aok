@@ -1,6 +1,6 @@
-import reducer, { setFont, setTheme } from 'redux/theme'
-import {initialState} from 'redux/theme/state'
-import { ThemeState } from 'redux/theme/type'
+import reducer, { setFont, setTheme } from 'localredux/theme'
+import {initialState} from 'localredux/theme/state'
+import { ThemeState } from 'localredux/theme/type'
 import { DARK, FONT_LARGE, FONT_REGULAR, LIGHT } from 'styling/themes'
 
 test('should return the initial state', () => {
