@@ -4,6 +4,7 @@ import {
   AudioPlayerProgress,
   BackgroundAudioPlayer,
   Circle,
+  ProgressTextParent,
 } from './styles';
 import { CustomATag, XSmallText } from '../../styling/common';
 import { useBaseProps } from 'hocs/base_component';
@@ -21,9 +22,8 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
   const { currentTheme, t, currentFont, currentSizes } = useBaseProps();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [play, setPlay] = useState(false);
-  const [audioProgress, setAudioProgres] = useState(0)
-  const [duration , setDuration] = useState(0)
-  
+  const [audioProgress, setAudioProgres] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const playOrPauseAudio = () => {
     if (play) {
@@ -36,7 +36,7 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
   };
 
   const updateAudioProgress = () => {
-    setAudioProgres(audioRef?.current?.currentTime ?? 0 );
+    setAudioProgres(audioRef?.current?.currentTime ?? 0);
   };
 
   const forwardAudio = () => {
@@ -46,10 +46,9 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
     }
   };
 
-
   const setMetaData = () => {
-     setDuration(audioRef?.current?.duration ?? 0)
-  }
+    setDuration(audioRef?.current?.duration ?? 0);
+  };
 
   const backwardAudio = () => {
     const reference = audioRef?.current;
@@ -84,7 +83,12 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
             link={play ? currentTheme.icons.pause_button : currentTheme.icons.play_button}
             alt={'play'}
           />
-          <audio onLoadedMetadata={setMetaData} onTimeUpdate={updateAudioProgress} src={url} ref={audioRef} />
+          <audio
+            onLoadedMetadata={setMetaData}
+            onTimeUpdate={updateAudioProgress}
+            src={url}
+            ref={audioRef}
+          />
         </>
         <CustomATag href='#' onClick={forwardAudio}>
           <Circle
@@ -108,13 +112,18 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
           max={audioRef.current ? audioRef.current.duration : 0}
           value={audioProgress}
         />
-        <XSmallText
-          $textSize={currentFont.xsmall_font_size}
-          $textWeight={currentFont.xsmall_font_weight}
-          $textColor={currentTheme.colors.audio_player_text_color}
-        >
-          {t('audio_player.progress_text', {remaining: formatTimeForAudio(audioProgress), out: formatTimeForAudio(duration)})}
-        </XSmallText>
+        <ProgressTextParent>
+          <XSmallText
+            $textSize={currentFont.xsmall_font_size}
+            $textWeight={currentFont.xsmall_font_weight}
+            $textColor={currentTheme.colors.audio_player_text_color}
+          >
+            {t('audio_player.progress_text', {
+              remaining: formatTimeForAudio(audioProgress),
+              out: formatTimeForAudio(duration),
+            })}
+          </XSmallText>
+        </ProgressTextParent>
       </AudioPlayerProgress>
     </BackgroundAudioPlayer>
   );

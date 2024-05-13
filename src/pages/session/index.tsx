@@ -1,43 +1,57 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
 import CardComponent from './card';
-import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
 import BottomBar from 'components/bottom_bar';
-import { BottomContentParent, MainContentParent } from './styles';
+import {
+  BottomContentParent,
+  MainContentParent,
+  MainSwipeChild,
+  MainSwipeContainer,
+  Slide,
+} from './styles';
 import { useBaseProps } from 'hocs/base_component';
+import { useNavigate } from 'react-router-dom';
 
 function Session() {
   const { currentTheme } = useBaseProps();
+  const [currentIndex, setCurrentIndex] = useState(0);
   const sessionData = useAppSelector(SelectTransformedSessionData);
-  const swiperRef = useRef<SwiperRef>(null);
+  const swiperRef = useRef(null);
+  const navigate = useNavigate();
   console.log(sessionData);
 
+  const slideRight = () => {
+    const cardsNumber = sessionData?.cards?.length || 0;
+    if (currentIndex < cardsNumber - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      navigate('/session_finish');
+    }
+  };
+
+  const slideLeft = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
   return (
-    <>
-      <MainContentParent>
-        <Swiper ref={swiperRef} >
+    <MainContentParent>
+      <MainSwipeContainer ref={swiperRef}>
+        <MainSwipeChild style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {sessionData?.cards?.map((card, index) => (
-            <SwiperSlide key={index}>
+            <Slide key={index}>
               <CardComponent card={card} />
-              <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
-                <BottomBar
-                  letfOnClick={() => {
-                    swiperRef?.current?.swiper?.slidePrev();
-                  }}
-                  rightOnClick={() => {
-                    swiperRef?.current?.swiper?.slideNext();
-                  }}
-                />
-              </BottomContentParent>
-            </SwiperSlide>
+            </Slide>
           ))}
-        </Swiper>
-      </MainContentParent>
-    </>
+        </MainSwipeChild>
+        <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
+          <BottomBar letfOnClick={() => slideLeft()} rightOnClick={() => slideRight()} />
+        </BottomContentParent>
+      </MainSwipeContainer>
+    </MainContentParent>
   );
 }
 

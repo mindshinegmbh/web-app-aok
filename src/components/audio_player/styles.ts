@@ -5,7 +5,12 @@ const BackgroundAudioPlayer = styled.div<{ $backgroundColor?: string }>`
   display: flex;
   flex: 1;
   flex-direction: row;
-  padding: 5px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 25px;
+  margin-right: 25px;
   border-radius: 10px;
   align-content: space-evenly;
   background-color: ${(props) => props.$backgroundColor || Colors.green_shade_0};
@@ -13,7 +18,7 @@ const BackgroundAudioPlayer = styled.div<{ $backgroundColor?: string }>`
 
 const AudioPlayerComponents = styled.div`
   display: flex;
-  flex: 0.6;
+  flex: 0.5;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -21,10 +26,19 @@ const AudioPlayerComponents = styled.div`
 
 const AudioPlayerProgress = styled.div`
   display: flex;
-  flex: 1;
+  flex: 0.5;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  padding-left: 10px;
+`;
+
+const ProgressTextParent = styled.div`
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: 5px;
 `;
 
 const Circle = styled.div<{ $backgroundColor?: string; $borderColor?: string }>`
@@ -57,4 +71,11 @@ const CircleMiddle = styled.div<{ $backgroundColor?: string; $borderColor?: stri
   flex-wrap: wrap;
 `;
 
-export { BackgroundAudioPlayer, Circle, CircleMiddle, AudioPlayerComponents, AudioPlayerProgress };
+export {
+  BackgroundAudioPlayer,
+  Circle,
+  CircleMiddle,
+  AudioPlayerComponents,
+  AudioPlayerProgress,
+  ProgressTextParent,
+};
