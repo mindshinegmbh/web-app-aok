@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const MainParent = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ const MainParent = styled.div`
   justify-content: space-between;
 `;
 
-const HeaderParent = styled.div`
+const HeaderParent = styled(motion.div)`
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -16,7 +17,7 @@ const HeaderParent = styled.div`
   padding-bottom: 20px;
 `;
 
-const SettingsIconParent = styled.div`
+const SettingsIconParent = styled(motion.div)`
   margin-right: 15px;
 `;
 

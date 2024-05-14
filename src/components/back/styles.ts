@@ -1,4 +1,10 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+const MainParent = styled(motion.div)`
+  display: flex;
+  flex: 1;
+`;
 
 const BackParent = styled.a`
   display: flex;
@@ -12,4 +18,4 @@ const TextParent = styled.div`
   margin-left: 5px;
 `;
 
-export { BackParent, TextParent };
+export { BackParent, TextParent, MainParent };

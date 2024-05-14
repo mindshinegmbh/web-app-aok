@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import Colors from 'styling/color';
 
-const BackgroundAudioPlayer = styled.div<{ $backgroundColor?: string }>`
+const BackgroundAudioPlayer = styled(motion.div)<{ $backgroundColor?: string }>`
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -24,7 +25,7 @@ const AudioPlayerComponents = styled.div`
   align-items: center;
 `;
 
-const AudioPlayerProgress = styled.div`
+const AudioPlayerProgress = styled(motion.div)`
   display: flex;
   flex: 0.5;
   flex-direction: column;
@@ -41,7 +42,7 @@ const ProgressTextParent = styled.div`
   margin-top: 5px;
 `;
 
-const Circle = styled.div<{ $backgroundColor?: string; $borderColor?: string; $isLarge: boolean }>`
+const Circle = styled(motion.div)<{ $backgroundColor?: string; $borderColor?: string; $isLarge: boolean }>`
   width: ${(props) => (props.$isLarge ? '40px' : '30px')};
   height:  ${(props) => (props.$isLarge ? '40px' : '30px')};
   border-style: solid;

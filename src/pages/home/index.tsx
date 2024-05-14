@@ -8,6 +8,7 @@ import { HomeParent } from './styles';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import loading from 'images/lotties/loading.json';
+import { AnimatePresence } from 'framer-motion';
 
 function Home() {
   const { currentFont, currentTheme } = useBaseProps();
@@ -19,12 +20,17 @@ function Home() {
 
   return (
     <HomeParent>
-      <LargeText
-        $textSize={currentFont.regular_font_size}
-        $textColor={currentTheme.colors.settings_button_color}
-      >
-        Logging you in , Bitte warten
-      </LargeText>
+      <AnimatePresence>
+        <LargeText
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          $textSize={currentFont.regular_font_size}
+          $textColor={currentTheme.colors.settings_button_color}
+        >
+          Logging you in , Bitte warten
+        </LargeText>
+      </AnimatePresence>
       <Lottie animationData={loading} loop={true} />
     </HomeParent>
   );

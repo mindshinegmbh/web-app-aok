@@ -1,5 +1,17 @@
 import React, { MouseEvent } from 'react';
 import { CustomATag, RegularIcon } from '../styling/common';
+import {
+  InitialAnimationY,
+  EnterAnimationY,
+  ExitAnimationY,
+  InitialAnimationS,
+  EnterAnimationS,
+  ExitAnimationS,
+  transitionStandard,
+  buttonAnimationHover,
+  buttonAnimationTap,
+  buttonAnimationTransition,
+} from 'utils/constants';
 
 type onClickFunction = () => void;
 export interface CustomLinkProps {
@@ -31,14 +43,28 @@ const CustomLink = ({
 
   if (onCustomPress) {
     return (
-      <CustomATag href={href} onClick={(e: MouseEvent) => onCustomClick(e)}>
+      <CustomATag
+        initial={InitialAnimationS}
+        animate={EnterAnimationS}
+        exit={ExitAnimationS}
+        href={href}
+        onClick={(e: MouseEvent) => onCustomClick(e)}
+        transition={buttonAnimationTransition}
+        
+      >
         <RegularIcon width={width} height={height} alt={alt} src={link} />
       </CustomATag>
     );
   }
 
   return (
-    <CustomATag href={href}>
+    <CustomATag
+      initial={InitialAnimationS}
+      animate={EnterAnimationS}
+      exit={ExitAnimationS}
+      transition={buttonAnimationTransition}
+      href={href}
+    >
       <RegularIcon width={width} height={height} alt={alt} src={link} />
     </CustomATag>
   );

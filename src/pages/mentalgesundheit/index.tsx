@@ -25,6 +25,12 @@ import CustomButton from 'components/custom_button';
 import TrophyInfoModal from './trophy_info_modal';
 import CustomLink from 'components/custom_link';
 import TrophyDetailsModal from './trophy_details_modal';
+import { motion } from 'framer-motion';
+import {
+  buttonAnimationHoverCircle,
+  buttonAnimationTap,
+  buttonAnimationTransition,
+} from 'utils/constants';
 
 function MentalGesundheit() {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
@@ -66,14 +72,20 @@ function MentalGesundheit() {
         >
           {t('mental_gesundheit.body_text_1')}
         </LargeText>
-        <CustomLink
-          link={currentTheme.icons.info}
-          alt={'info button 1'}
-          width={currentSizes.back.width}
-          height={currentSizes.back.height}
-          href={'#'}
-          onCustomPress={showTrophyInfoModal}
-        />
+        <motion.div
+          whileHover={buttonAnimationHoverCircle}
+          whileTap={buttonAnimationTap}
+          transition={buttonAnimationTransition}
+        >
+          <CustomLink
+            link={currentTheme.icons.info}
+            alt={'info button 1'}
+            width={currentSizes.back.width}
+            height={currentSizes.back.height}
+            href={'#'}
+            onCustomPress={showTrophyInfoModal}
+          />
+        </motion.div>
       </IndexInfoParent>
       <IndexNumberParent>
         <LargeText
@@ -137,14 +149,20 @@ function MentalGesundheit() {
         >
           {t('mental_gesundheit.heading_2')}
         </LargeText>
-        <CustomLink
-          link={currentTheme.icons.info}
-          alt={'info button 2'}
-          width={currentSizes.back.width}
-          height={currentSizes.back.height}
-          href={'#'}
-          onCustomPress={showTrophyDetailsModal}
-        />
+        <motion.div
+          whileHover={buttonAnimationHoverCircle}
+          whileTap={buttonAnimationTap}
+          transition={buttonAnimationTransition}
+        >
+          <CustomLink
+            link={currentTheme.icons.info}
+            alt={'info button 2'}
+            width={currentSizes.back.width}
+            height={currentSizes.back.height}
+            href={'#'}
+            onCustomPress={showTrophyDetailsModal}
+          />
+        </motion.div>
       </IndexInfoParent>
       <IconTextParent>
         <IconTextChild>

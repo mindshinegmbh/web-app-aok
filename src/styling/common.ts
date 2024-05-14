@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Colors from './color';
+import { motion } from 'framer-motion';
 
 const Background = styled.div<{ $backgroundColor?: string }>`
   height: 100vh;
@@ -29,13 +30,13 @@ const XSmallText = styled.div<{ $textColor?: string; $textSize: string; $textWei
   line-spacing: 20px;
 `;
 
-const SmallText = styled.span<{ $textColor?: string; $textSize: string }>`
+const SmallText = styled(motion.span)<{ $textColor?: string; $textSize: string }>`
   font-family: 'AOK Buenos Aires';
   color: ${(props) => props.$textColor};
   font-size: ${(props) => props.$textSize};
 `;
 
-const LargeText = styled.div<{ $textColor?: string; $textSize: string;  }>`
+const LargeText = styled(motion.span)<{ $textColor?: string; $textSize: string }>`
   font-family: 'AOK Buenos Aires', sans-serif;
   color: ${(props) => props.$textColor};
   font-size: ${(props) => props.$textSize};
@@ -48,7 +49,7 @@ const RegularIcon = styled.img<{ $width?: string; $height?: string }>`
   object-fit: contain;
 `;
 
-const CustomATag = styled.a`
+const CustomATag = styled(motion.a)`
   text-decoration: none;
 `;
 
@@ -65,5 +66,5 @@ export {
   LargeText,
   SmallText,
   XLargeText,
-  Bold
+  Bold,
 };

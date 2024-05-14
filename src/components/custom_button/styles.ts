@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const ButtonParent = styled.button<{$backgroundColor: string}>`
+const ButtonParent = styled(motion.button)<{$backgroundColor: string}>`
   background-color: ${props => props.$backgroundColor};
   align-items: center;
   width: 90%;

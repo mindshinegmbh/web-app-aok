@@ -3,6 +3,14 @@ import { BottomBarParent } from './styles';
 import { useBaseProps } from 'hocs/base_component';
 import Icon from 'components/icon';
 import { CustomATag } from 'styling/common';
+import {
+  InitialAnimationY,
+  EnterAnimationY,
+  ExitAnimationY,
+  EnterAnimationYD,
+  ExitAnimationYD,
+  InitialAnimationYD,
+} from 'utils/constants';
 
 export interface BottomBarProps {
   letfOnClick: () => void;
@@ -13,7 +21,7 @@ const BottomBar = ({ letfOnClick, rightOnClick }: BottomBarProps) => {
   const { currentTheme, currentSizes } = useBaseProps();
 
   return (
-    <BottomBarParent>
+    <BottomBarParent initial={InitialAnimationYD} animate={EnterAnimationYD} exit={ExitAnimationYD}>
       <CustomATag href='#' onClick={letfOnClick}>
         <Icon
           width={currentSizes.back.width}
