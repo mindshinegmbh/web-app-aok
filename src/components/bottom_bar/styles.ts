@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const BottomBarParent = styled.div`
+const BottomBarParent = styled(motion.div)`
   display: flex;
   flex: 1;
   flex-direction: row;

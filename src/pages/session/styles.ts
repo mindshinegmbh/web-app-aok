@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { SwiperSlide } from 'swiper/react';
 
@@ -45,7 +46,7 @@ const CenterTextParent = styled.div`
   padding-right: 15px;
 `;
 
-const UlParent = styled.ul<{ $textColor: string }>`
+const UlParent = styled(motion.ul)<{ $textColor: string }>`
   color: ${(props) => props.$textColor};
 `;
 

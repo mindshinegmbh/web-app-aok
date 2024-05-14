@@ -17,6 +17,7 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "env-cmd": "^10.1.0",
+    "framer-motion": "^11.2.0",
     "i18next": "^23.11.2",
     "immer": "^10.0.4",
     "localforage": "^1.10.0",

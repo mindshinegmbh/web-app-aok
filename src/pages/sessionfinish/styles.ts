@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const SessionFinishParent = styled.div<{ $backgroundColor: string }>`
+const SessionFinishParent = styled(motion.div)<{ $backgroundColor: string }>`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -36,7 +37,7 @@ const ButtonParent = styled.div`
   align-self: center;
 `;
 
-const FensterParent = styled.div<{ $decorationColor: string }>`
+const FensterParent = styled(motion.div)<{ $decorationColor: string }>`
   white-space: pre-line;
   text-align: center;
   text-decoration: underline;
@@ -44,15 +45,12 @@ const FensterParent = styled.div<{ $decorationColor: string }>`
   margin-top: 28px;
 `;
 
-const FeedbackParent = styled.div<{ $showFenster: boolean }>`
+const FeedbackParent = styled(motion.div)<{ $showFenster: boolean }>`
   display: flex;
   flex: 1;
   width: 90%;
   justify-content: center;
   margin-top: 15px;
-  opacity: ${(props) => (props.$showFenster ? '0' : '1')};
-  transition: 'all .5s';
-  visibility: ${(props) => (props.$showFenster ? 'hidden' : 'visible')};
 `;
 
 const FeedbackBarParent = styled.div`
