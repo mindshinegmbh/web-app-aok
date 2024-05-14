@@ -1,9 +1,16 @@
 import React from 'react';
 import { InputCheckboxParent } from './styles';
-import { InputType } from 'utils/constants';
+import {
+  EnterAnimationY,
+  ExitAnimationY,
+  InitialAnimationY,
+  InputType,
+  transitionInput,
+} from 'utils/constants';
 import CustomTextArea from 'components/custom_textarea';
 import Checkbox from 'components/checkbox';
 import RadioButton from 'components/radiobutton';
+import { motion } from 'framer-motion';
 
 interface InputProps {
   inputType: string;
@@ -11,11 +18,15 @@ interface InputProps {
 }
 
 const InputsComponent = (props: InputProps) => {
-  
   return (
-    <>
+    <motion.div
+      initial={InitialAnimationY}
+      animate={EnterAnimationY}
+      exit={ExitAnimationY}
+      transition={transitionInput}
+    >
       {props.inputType === InputType.text ? (
-        <CustomTextArea placeholder={'session.textfield'} />
+        <CustomTextArea  placeholder={'session.textfield'} />
       ) : props.inputType === InputType.checkbox ? (
         <InputCheckboxParent>
           {props.inputs.map((checkbox, index) => (
@@ -31,7 +42,7 @@ const InputsComponent = (props: InputProps) => {
       ) : (
         <div></div>
       )}
-    </>
+    </motion.div>
   );
 };
 

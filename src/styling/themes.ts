@@ -40,6 +40,7 @@ import {
   badge_4_light,
   close_dark,
   close_light,
+  settings_dark,
 } from '../images';
 
 export const DARK = 'dark';
@@ -218,7 +219,7 @@ const Themes: ThemeType = {
       element_background: Colors.white_shade_0,
       primary_text_color: Colors.white_shade_0,
       secondary_text_color: Colors.grey_shade_0,
-      settings_text_color: Colors.green_shade_3,
+      settings_text_color: Colors.green_shade_4,
       header_text_color: Colors.green_shade_1,
       settings_button_color: Colors.green_shade_4,
       audio_player_background: Colors.green_shade_5_opaque,
@@ -238,7 +239,7 @@ const Themes: ThemeType = {
     },
     icons: {
       back: back_dark,
-      settings: settings_light,
+      settings: settings_dark,
       right_arrow: right_arrow_dark,
       disabled_switch: disabled_switch_dark,
       enabled_switch: enabled_switch_dark,
