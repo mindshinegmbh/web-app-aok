@@ -41,12 +41,12 @@ const ProgressTextParent = styled.div`
   margin-top: 5px;
 `;
 
-const Circle = styled.div<{ $backgroundColor?: string; $borderColor?: string }>`
-  width: 30px;
-  height: 30px;
+const Circle = styled.div<{ $backgroundColor?: string; $borderColor?: string; $isLarge: boolean }>`
+  width: ${(props) => (props.$isLarge ? '40px' : '30px')};
+  height:  ${(props) => (props.$isLarge ? '40px' : '30px')};
   border-style: solid;
   border-width: 1px;
-  border-radius: 15px;
+  border-radius:  ${(props) => (props.$isLarge ? '20px' : '15px')};
   border-color: ${(props) => props.$borderColor};
   background-color: ${(props) => props.$backgroundColor};
   justify-content: center;

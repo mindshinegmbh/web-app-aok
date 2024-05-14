@@ -11,6 +11,7 @@ import { useBaseProps } from 'hocs/base_component';
 import CustomLink from 'components/custom_link';
 import Progress from 'components/custom_progress';
 import { formatTimeForAudio } from 'utils/general_utils';
+import { FONT_LARGE } from 'styling/themes';
 
 const FORWARD_BACKWARD_TIME = 15;
 
@@ -62,6 +63,7 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
       <AudioPlayerComponents>
         <CustomATag href='#' onClick={backwardAudio}>
           <Circle
+            $isLarge={currentFont.name === FONT_LARGE}
             $backgroundColor={currentTheme.colors.forward_backward_background}
             $borderColor={currentTheme.colors.forward_backward_bordercolor}
           >
@@ -92,6 +94,7 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
         </>
         <CustomATag href='#' onClick={forwardAudio}>
           <Circle
+            $isLarge={currentFont.name === FONT_LARGE}
             $backgroundColor={currentTheme.colors.forward_backward_background}
             $borderColor={currentTheme.colors.forward_backward_bordercolor}
           >
