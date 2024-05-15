@@ -20,16 +20,11 @@ import { useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import {
   EnterAnimationO,
-  EnterAnimationY,
   ExitAnimationO,
-  ExitAnimationY,
   InitialAnimationO,
-  InitialAnimationY,
   buttonAnimationHover,
   buttonAnimationTap,
   buttonAnimationTransition,
-  transitionInput,
-  transitionStandard,
 } from 'utils/constants';
 
 function SessionFinish() {

@@ -4,9 +4,6 @@ import { useBaseProps } from 'hocs/base_component';
 import Icon from 'components/icon';
 import { CustomATag } from 'styling/common';
 import {
-  InitialAnimationY,
-  EnterAnimationY,
-  ExitAnimationY,
   EnterAnimationYD,
   ExitAnimationYD,
   InitialAnimationYD,
