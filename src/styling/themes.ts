@@ -105,6 +105,10 @@ interface ColorType {
   range_bar: string;
   gesundheit_link_color: string;
   modal_text: string;
+  pager_background: string;
+  pager_border: string;
+  pager_dot_active: string;
+  pager_dot_inactive: string;
 }
 
 export interface IconType {
@@ -191,6 +195,10 @@ const Themes: ThemeType = {
       range_bar: Colors.green_shade_4,
       gesundheit_link_color: Colors.green_shade_4,
       modal_text: Colors.green_shade_6,
+      pager_background: Colors.white_shade_0,
+      pager_border: Colors.white_shade_0,
+      pager_dot_active: Colors.green_shade_3,
+      pager_dot_inactive: Colors.grey_shade_2,
     },
     icons: {
       back: back_light,
@@ -236,6 +244,10 @@ const Themes: ThemeType = {
       range_bar: Colors.green_shade_4,
       gesundheit_link_color: Colors.green_shade_4,
       modal_text: Colors.green_shade_6,
+      pager_background: Colors.black_shade_0,
+      pager_border: Colors.green_shade_0,
+      pager_dot_active: Colors.green_shade_4,
+      pager_dot_inactive: Colors.grey_shade_2,
     },
     icons: {
       back: back_dark,

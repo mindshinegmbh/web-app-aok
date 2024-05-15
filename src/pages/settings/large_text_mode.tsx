@@ -14,6 +14,7 @@ const FontModeButton = () => {
 
   const switchFont = ()=>{
     dispatch(setFont(currentFont.name === FONT_REGULAR ? FONT_LARGE : FONT_REGULAR))
+    window.location.reload();
   }
 
   const getImage = () => currentFont.name === FONT_LARGE ? currentTheme.icons.enabled_switch : currentTheme.icons.disabled_switch

@@ -23,10 +23,10 @@ const CardComponent = (props: CardProps) => {
   const { currentTheme, currentFont } = useBaseProps();
 
   return (
-    <CardParent>
+    <CardParent $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>
         <AudioPlayer url={props.card.audio_url} />
-        <CenterTextParent>
+        <CenterTextParent key={1}>
           <LargeText
             initial={InitialAnimationO}
             animate={EnterAnimationO}

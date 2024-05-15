@@ -2,9 +2,12 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { SwiperSlide } from 'swiper/react';
 
-const MainContentParent = styled.div`
+const MainContentParent = styled.div<{$backgroundColor: string}>`
   display: flex;
   flex: 1;
+  flex-direction: column;
+  background-color: ${(props) => props.$backgroundColor};
+  padding-bottom: 100px;
 `;
 
 const BodyTextParent = styled.div`
@@ -29,12 +32,13 @@ const Session = styled.div`
   justify-content: space-between;
 `;
 
-const CardParent = styled.div`
+const CardParent = styled.div<{$backgroundColor: string}>`
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 15px;
+  background-color: ${(props) => props.$backgroundColor};
 `;
 
 const CenterTextParent = styled.div`
@@ -83,6 +87,7 @@ const MainSwipeContainer = styled.div`
 const MainSwipeChild = styled.div`
   display: flex;
   transition: transform 0.3s ease;
+  margin-top: 50px;
 `;
 
 const Slide = styled.div`

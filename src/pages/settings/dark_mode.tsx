@@ -13,6 +13,7 @@ const DarkModeButton = () => {
   
   const switchTheme = ()=>{
     dispatch(setTheme(currentTheme.name === LIGHT ? DARK : LIGHT))
+    window.location.reload();
   }
 
   const getImage = () => currentTheme.name === DARK ? currentTheme.icons.enabled_switch : currentTheme.icons.disabled_switch
