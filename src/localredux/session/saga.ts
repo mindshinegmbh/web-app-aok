@@ -11,7 +11,6 @@ export function* getSession({
   type: typeof GET_SESSION_ACTION;
   payload: GetSession;
 }) {
-  console.log(type)
   const { data } = yield call(apis.getSessionRequest, payload.sessionId);
   yield put(setSessionData(data[0]?.session_v3));
   yield delay(3000)

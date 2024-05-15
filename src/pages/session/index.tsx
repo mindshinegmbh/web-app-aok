@@ -13,6 +13,7 @@ import {
 } from './styles';
 import { useBaseProps } from 'hocs/base_component';
 import { useNavigate } from 'react-router-dom';
+import CardsPager from 'components/cards_pager';
 
 function Session() {
   const { currentTheme } = useBaseProps();
@@ -20,8 +21,7 @@ function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  console.log(sessionData);
-
+  
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {
@@ -38,8 +38,10 @@ function Session() {
   };
 
   return (
-    <MainContentParent>
+    <MainContentParent $backgroundColor={currentTheme.colors.screen_background}>
       <MainSwipeContainer ref={swiperRef}>
+        <CardsPager total={sessionData?.cards?.length || 0} current={currentIndex + 1} />
+
         <MainSwipeChild style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {sessionData?.cards?.map((card, index) => (
             <Slide key={index}>
