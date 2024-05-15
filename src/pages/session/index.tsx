@@ -21,7 +21,7 @@ function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  
+  console.log(currentTheme.name)
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {
