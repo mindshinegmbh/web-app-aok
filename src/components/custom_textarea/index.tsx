@@ -15,6 +15,7 @@ const CustomTextArea = (props: CustomTextAreaProps) => {
     {
       ...props,
       inputElementType: 'textarea',
+      "aria-label": "This is Text Area aria-label"
     },
     ref,
   );

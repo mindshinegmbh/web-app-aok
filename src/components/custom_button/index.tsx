@@ -18,6 +18,7 @@ const CustomButton = (props: CustomButtonProps) => {
 
   return (
     <ButtonParent
+      aria-label={props.text}
       whileHover={buttonAnimationHover}
       whileTap={buttonAnimationTap}
       transition={buttonAnimationTransition}
