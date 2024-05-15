@@ -14,6 +14,8 @@ import {
   transitionTop,
   ulAnimation,
 } from 'utils/constants';
+import { useAppSelector } from 'localredux/hooks';
+import { SelectTheme } from 'localredux/theme/selectors';
 
 interface CardProps {
   card: Card;
@@ -21,7 +23,9 @@ interface CardProps {
 
 const CardComponent = (props: CardProps) => {
   const { currentTheme, currentFont } = useBaseProps();
+  const theme = useAppSelector(SelectTheme);
   console.log(currentTheme.name)
+  console.log(theme)
   return (
     <CardParent $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>
