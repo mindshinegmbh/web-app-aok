@@ -1,15 +1,9 @@
 import React, { MouseEvent } from 'react';
 import { CustomATag, RegularIcon } from '../styling/common';
 import {
-  InitialAnimationY,
-  EnterAnimationY,
-  ExitAnimationY,
   InitialAnimationS,
   EnterAnimationS,
   ExitAnimationS,
-  transitionStandard,
-  buttonAnimationHover,
-  buttonAnimationTap,
   buttonAnimationTransition,
 } from 'utils/constants';
 
