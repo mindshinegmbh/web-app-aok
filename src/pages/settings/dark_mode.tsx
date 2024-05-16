@@ -10,10 +10,11 @@ const DarkModeButton = () => {
   const currentTheme = useContext(ThemeContext);
   const dispatch = useAppDispatch();
   const theme = useAppSelector(SelectTheme);
+
   
   const switchTheme = ()=>{
-    dispatch(setTheme(currentTheme.name === LIGHT ? DARK : LIGHT))
-    window.location.reload();
+    const themeToSet = currentTheme.name === LIGHT ? DARK : LIGHT
+    dispatch(setTheme(themeToSet))
   }
 
   const getImage = () => currentTheme.name === DARK ? currentTheme.icons.enabled_switch : currentTheme.icons.disabled_switch

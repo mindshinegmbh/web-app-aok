@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
@@ -21,7 +22,15 @@ function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  console.log(currentTheme.name)
+
+  useEffect(() => {
+    window.onpageshow = function (event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    };
+  }, []);
+
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {
@@ -41,7 +50,6 @@ function Session() {
     <MainContentParent $backgroundColor={currentTheme.colors.screen_background}>
       <MainSwipeContainer ref={swiperRef}>
         <CardsPager total={sessionData?.cards?.length || 0} current={currentIndex + 1} />
-
         <MainSwipeChild style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {sessionData?.cards?.map((card, index) => (
             <Slide key={index}>

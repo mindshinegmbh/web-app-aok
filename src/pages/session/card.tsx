@@ -26,6 +26,7 @@ const CardComponent = (props: CardProps) => {
   const theme = useAppSelector(SelectTheme);
   console.log(currentTheme.name)
   console.log(theme)
+
   return (
     <CardParent $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>
