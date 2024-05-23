@@ -89,7 +89,7 @@ function MentalGesundheit() {
           />
         </motion.div>
       </IndexInfoParent>
-      <IndexNumberParent>
+      <IndexNumberParent aria-label='value of index'>
         <LargeText
           $textSize={currentFont.large_font}
           $textColor={currentTheme.colors.all_white_color}
@@ -168,7 +168,7 @@ function MentalGesundheit() {
           />
         </motion.div>
       </IndexInfoParent>
-      <IconTextParent>
+      <IconTextParent aria-label='this section represents values of badges'>
         <IconTextChild>
           <Icon
             link={currentTheme.icons.badges[0]}

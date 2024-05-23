@@ -21,7 +21,7 @@ function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  console.log(currentTheme.name)
+  console.log(currentTheme.name);
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {
@@ -38,18 +38,28 @@ function Session() {
   };
 
   return (
-    <MainContentParent role="main" aria-roledescription='session cards' $backgroundColor={currentTheme.colors.screen_background}>
+    <MainContentParent
+      role='main'
+      aria-roledescription='session cards'
+      $backgroundColor={currentTheme.colors.screen_background}
+    >
       <MainSwipeContainer ref={swiperRef}>
         <CardsPager total={sessionData?.cards?.length || 0} current={currentIndex + 1} />
 
         <MainSwipeChild style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {sessionData?.cards?.map((card, index) => (
-            <Slide key={index}>
+            <Slide
+              aria-label={'session no' + index + 1 + 'out of ' + sessionData?.cards?.length}
+              key={index}
+            >
               <CardComponent card={card} />
             </Slide>
           ))}
         </MainSwipeChild>
-        <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
+        <BottomContentParent
+          aria-label='to navigate between session cards'
+          $backgroundColor={currentTheme.colors.screen_background}
+        >
           <BottomBar letfOnClick={() => slideLeft()} rightOnClick={() => slideRight()} />
         </BottomContentParent>
       </MainSwipeContainer>
