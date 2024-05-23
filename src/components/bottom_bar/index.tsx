@@ -18,7 +18,7 @@ const BottomBar = ({ letfOnClick, rightOnClick }: BottomBarProps) => {
   const { currentTheme, currentSizes } = useBaseProps();
 
   return (
-    <BottomBarParent initial={InitialAnimationYD} animate={EnterAnimationYD} exit={ExitAnimationYD}>
+    <BottomBarParent aria-roledescription='use this to naviagte between cards' role='navigation' initial={InitialAnimationYD} animate={EnterAnimationYD} exit={ExitAnimationYD}>
       <CustomATag href='#' onClick={letfOnClick}>
         <Icon
           width={currentSizes.back.width}

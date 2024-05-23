@@ -39,7 +39,7 @@ function SessionFinish() {
   };
 
   return (
-    <SessionFinishParent $backgroundColor={currentTheme.colors.screen_background}>
+    <SessionFinishParent role='main' aria-roledescription='session finsish page' $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>
         <LargeText
           $textSize={currentFont.large_font}

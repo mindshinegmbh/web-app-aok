@@ -26,7 +26,7 @@ function Settings() {
         zeigen={zeigenBarrierFreiheit}
         versteckenModal={versteckenBarrierFreiheitModal}
       />
-      <SettingListParent>
+      <SettingListParent aria-roledescription='page to show session finsish' role='main'>
         <SettingsButton
           testid={'training'}
           onClick={() => {
@@ -38,13 +38,15 @@ function Settings() {
         />
         <DarkModeButton />
         <FontModeButton />
-        <SettingsButton
-          testid={'barrier'}
-          onClick={() => zeigenBarrierFreiheitModal()}
-          alt={'barrier link'}
-          image={theme.icons.right_arrow}
-          text={'settings_page.fourth_line_text'}
-        />
+        <div aria-modal aria-haspopup>
+          <SettingsButton
+            testid={'barrier'}
+            onClick={() => zeigenBarrierFreiheitModal()}
+            alt={'barrier link'}
+            image={theme.icons.right_arrow}
+            text={'settings_page.fourth_line_text'}
+          />
+        </div>
       </SettingListParent>
     </>
   );

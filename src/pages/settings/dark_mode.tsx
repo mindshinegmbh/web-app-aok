@@ -20,9 +20,9 @@ const DarkModeButton = () => {
   const getAltText = () => theme === DARK ? "dark mode link enabled" : "dark mode link disabled"
 
   return (
-     <>
+     <div aria-selected={theme === DARK }>
       <SettingsButton testid={"dark mode"} onClick={switchTheme} alt={getAltText()} image={getImage()} text={"settings_page.second_line_text"}/>
-     </>
+     </div>
   );
 };
 

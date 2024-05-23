@@ -15,7 +15,7 @@ const Header = ({ isSettingsVisible }: HeaderProps) => {
 
   return (
     <AnimatePresence>
-      <MainParent>
+      <MainParent role='navigation' aria-roledescription='use this to naviagte back and to settings screen'>
         <HeaderParent initial={InitialAnimationY} animate={EnterAnimationY} exit={ExitAnimationY}>
           <Back />
           <SettingsIconParent

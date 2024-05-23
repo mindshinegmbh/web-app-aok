@@ -21,9 +21,9 @@ const FontModeButton = () => {
   const getImageAltText = () => font === FONT_LARGE ? "large text mode link enabled" : "large text mode link disabled"
 
   return (
-     <>
+     <div aria-selected={font === FONT_LARGE}>
       <SettingsButton testid={"large text"} onClick={switchFont} alt={getImageAltText()} image={getImage()} text={"settings_page.third_line_text"}/>
-     </>
+     </div>
   );
 };
 

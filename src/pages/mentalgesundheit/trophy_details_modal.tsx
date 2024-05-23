@@ -14,7 +14,7 @@ function TrophyDetailsModal(props: TrophyDetailsModalProps) {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
   const list = Array.from(Array(13).keys());
   return (
-    <Modal show={props.show} onHide={props.hideModal}>
+    <Modal role="contentinfo" show={props.show} onHide={props.hideModal}>
       <CloseParent>
         <CustomLink
           link={currentTheme.icons.close}

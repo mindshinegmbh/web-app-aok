@@ -55,7 +55,7 @@ function MentalGesundheit() {
     setShowTrophyDetails(true);
   };
   return (
-    <MentalGesundheitParent $backgroundColor={currentTheme.colors.screen_background}>
+    <MentalGesundheitParent role="main" aria-roledescription='this page is for your profile' $backgroundColor={currentTheme.colors.screen_background}>
       <TrophyInfoModal show={showTrophyInfo} hideModal={hideTrophyInfoModal} />
       <TrophyDetailsModal show={showTrophyDetails} hideModal={hideTrophyDetailsModal} />
 
@@ -76,6 +76,8 @@ function MentalGesundheit() {
           whileHover={buttonAnimationHoverCircle}
           whileTap={buttonAnimationTap}
           transition={buttonAnimationTransition}
+          aria-modal
+          aria-haspopup
         >
           <CustomLink
             link={currentTheme.icons.info}
@@ -153,6 +155,8 @@ function MentalGesundheit() {
           whileHover={buttonAnimationHoverCircle}
           whileTap={buttonAnimationTap}
           transition={buttonAnimationTransition}
+          aria-modal
+          aria-haspopup
         >
           <CustomLink
             link={currentTheme.icons.info}
@@ -243,12 +247,12 @@ function MentalGesundheit() {
       </IndexInfoParent>
 
       {!done && (
-        <FeedbackParent>
+        <FeedbackParent id="feedbackform" aria-roledescription='you can file in feedback here' role="form">
           <CustomTextArea placeholder={t('mental_gesundheit.feedback_placeholder')} />
         </FeedbackParent>
       )}
       {done && (
-        <FeedbackParent>
+        <FeedbackParent id="feedbackbutton" aria-controls="feedbackform" aria-expanded={false}>
           <LargeText
             $textSize={currentFont.large_font}
             $textColor={currentTheme.colors.all_white_color}

@@ -38,7 +38,7 @@ function Session() {
   };
 
   return (
-    <MainContentParent $backgroundColor={currentTheme.colors.screen_background}>
+    <MainContentParent role="main" aria-roledescription='session cards' $backgroundColor={currentTheme.colors.screen_background}>
       <MainSwipeContainer ref={swiperRef}>
         <CardsPager total={sessionData?.cards?.length || 0} current={currentIndex + 1} />
 
