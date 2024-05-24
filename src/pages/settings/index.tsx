@@ -1,12 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styling/themes';
 import { SettingListParent } from './styles';
-import SettingsButton from 'components/settings_button';
+import IconButton from 'components/icon_button';
 import DarkModeButton from './dark_mode';
 import FontModeButton from './large_text_mode';
 import { useNavigate } from 'react-router-dom';
 import withBase from 'hocs/base_page';
 import BarrierFreiheitModal from './barrierfreiheit_modal';
+import { sendCustomEvent, sendPageEvent } from 'utils/analytics';
+import { GA4Category, GA4Event, Pages } from 'utils/custom_events';
 
 function Settings() {
   const theme = useContext(ThemeContext);
@@ -17,8 +19,13 @@ function Settings() {
     setZeigenBarrierFreihei(false);
   };
   const zeigenBarrierFreiheitModal = () => {
+    sendCustomEvent(GA4Category.settings, GA4Event.accessibility_click);
     setZeigenBarrierFreihei(true);
   };
+
+  useEffect(() => {
+    sendPageEvent(Pages.settings, Pages.settings);
+  }, []);
 
   return (
     <>
@@ -27,7 +34,7 @@ function Settings() {
         versteckenModal={versteckenBarrierFreiheitModal}
       />
       <SettingListParent aria-roledescription='page to show session finsish' role='main'>
-        <SettingsButton
+        <IconButton
           testid={'training'}
           onClick={() => {
             navigation('/home');
@@ -39,7 +46,7 @@ function Settings() {
         <DarkModeButton />
         <FontModeButton />
         <div aria-modal aria-haspopup>
-          <SettingsButton
+          <IconButton
             testid={'barrier'}
             onClick={() => zeigenBarrierFreiheitModal()}
             alt={'barrier link'}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
@@ -14,6 +14,8 @@ import {
 import { useBaseProps } from 'hocs/base_component';
 import { useNavigate } from 'react-router-dom';
 import CardsPager from 'components/cards_pager';
+import { sendPageEvent } from 'utils/analytics';
+import { Pages } from 'utils/custom_events';
 
 function Session() {
   const { currentTheme } = useBaseProps();
@@ -21,7 +23,11 @@ function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  console.log(currentTheme.name);
+  
+  useEffect(() => {
+    sendPageEvent(Pages.session, Pages.session)
+  }, [])
+  
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {

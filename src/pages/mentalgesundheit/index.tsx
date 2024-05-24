@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Bold, LargeText, SmallText, XLargeText } from '../../styling/common';
 import withBase from 'hocs/base_page';
 import { useBaseProps } from 'hocs/base_component';
@@ -31,6 +31,8 @@ import {
   buttonAnimationTap,
   buttonAnimationTransition,
 } from 'utils/constants';
+import { sendCustomEvent, sendPageEvent } from 'utils/analytics';
+import { GA4Category, GA4Event, Pages } from 'utils/custom_events';
 
 function MentalGesundheit() {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
@@ -38,7 +40,11 @@ function MentalGesundheit() {
   const [showTrophyInfo, setShowTrophyInfo] = useState(false);
   const [showTrophyDetails, setShowTrophyDetails] = useState(false);
 
+  useEffect(() => {
+    sendPageEvent(Pages.mentalgesundheit, Pages.mentalgesundheit);
+  }, []);
   const onClickSend = () => {
+    sendCustomEvent(GA4Category.mental, GA4Event.feedback_send);
     setDone(true);
   };
 
@@ -46,16 +52,22 @@ function MentalGesundheit() {
     setShowTrophyInfo(false);
   };
   const showTrophyInfoModal = () => {
+    sendCustomEvent(GA4Category.mental, GA4Event.sleep_progress_click);
     setShowTrophyInfo(true);
   };
   const hideTrophyDetailsModal = () => {
     setShowTrophyDetails(false);
   };
   const showTrophyDetailsModal = () => {
+    sendCustomEvent(GA4Category.mental, GA4Event.trophyinfo_click);
     setShowTrophyDetails(true);
   };
   return (
-    <MentalGesundheitParent role="main" aria-roledescription='this page is for your profile' $backgroundColor={currentTheme.colors.screen_background}>
+    <MentalGesundheitParent
+      role='main'
+      aria-roledescription='this page is for your profile'
+      $backgroundColor={currentTheme.colors.screen_background}
+    >
       <TrophyInfoModal show={showTrophyInfo} hideModal={hideTrophyInfoModal} />
       <TrophyDetailsModal show={showTrophyDetails} hideModal={hideTrophyDetailsModal} />
 
@@ -247,12 +259,16 @@ function MentalGesundheit() {
       </IndexInfoParent>
 
       {!done && (
-        <FeedbackParent id="feedbackform" aria-roledescription='you can file in feedback here' role="form">
+        <FeedbackParent
+          id='feedbackform'
+          aria-roledescription='you can file in feedback here'
+          role='form'
+        >
           <CustomTextArea placeholder={t('mental_gesundheit.feedback_placeholder')} />
         </FeedbackParent>
       )}
       {done && (
-        <FeedbackParent id="feedbackbutton" aria-controls="feedbackform" aria-expanded={false}>
+        <FeedbackParent id='feedbackbutton' aria-controls='feedbackform' aria-expanded={false}>
           <LargeText
             $textSize={currentFont.large_font}
             $textColor={currentTheme.colors.all_white_color}
