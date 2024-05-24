@@ -96,6 +96,5 @@ export const buttonAnimationHover = {
   scale: 1.02,
 };
 export const buttonAnimationHoverCircle = {
-    scale: 1.1,
-  };
-  
+  scale: 1.1,
+};

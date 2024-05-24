@@ -24,6 +24,7 @@ const Checkbox = (props: CheckboxProps) => {
       onClick={(e: MouseEvent) => onClickCheckbox(e)}
       href='#'
       $backgroundColor={currentTheme.colors.screen_background}
+      aria-checked={selected}
     >
       <Icon
         width={currentSizes.back.width}

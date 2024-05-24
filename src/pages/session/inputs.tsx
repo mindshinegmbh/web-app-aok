@@ -28,13 +28,13 @@ const InputsComponent = (props: InputProps) => {
       {props.inputType === InputType.text ? (
         <CustomTextArea  placeholder={'session.textfield'} />
       ) : props.inputType === InputType.checkbox ? (
-        <InputCheckboxParent>
+        <InputCheckboxParent aria-multiselectable={true}>
           {props.inputs.map((checkbox, index) => (
             <Checkbox key={index} value={checkbox} selected={false} />
           ))}
         </InputCheckboxParent>
       ) : props.inputType === InputType.radio ? (
-        <InputCheckboxParent>
+        <InputCheckboxParent aria-multiselectable={false}>
           {props.inputs.map((checkbox, index) => (
             <RadioButton key={index} value={checkbox} selected={false} />
           ))}

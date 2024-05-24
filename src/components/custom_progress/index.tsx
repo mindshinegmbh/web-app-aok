@@ -13,6 +13,9 @@ const Progress = ({ max, value, color, unCompletedColor }: ProgressProps) => {
   return (
     <ProgressParent>
       <ProgressBar
+        ariaValuetext={value}
+        ariaValuemax={max}
+        ariaValuemin={0}
         baseBgColor={unCompletedColor}
         height={'4px'}
         completed={value}

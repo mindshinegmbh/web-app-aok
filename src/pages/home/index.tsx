@@ -9,12 +9,15 @@ import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import loading from 'images/lotties/loading.json';
 import { AnimatePresence } from 'framer-motion';
+import { sendPageEvent } from 'utils/analytics';
+import { Pages } from 'utils/custom_events';
 
 function Home() {
   const { currentFont, currentTheme } = useBaseProps();
   const navigation = useNavigate();
   const dispatch = useAppDispatch();
   useEffect(() => {
+    sendPageEvent(Pages.home, Pages.home)
     dispatch(getSessionData({ sessionId: 23, navigation }));
   });
 

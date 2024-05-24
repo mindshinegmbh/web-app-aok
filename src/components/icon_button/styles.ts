@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SettingButtonParent = styled.a`
+const IconButtonParent = styled.a`
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -9,4 +9,4 @@ const SettingButtonParent = styled.a`
   text-decoration: none;
 `;
 
-export { SettingButtonParent };
+export { IconButtonParent };

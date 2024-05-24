@@ -1,11 +1,11 @@
 import React, { useRef, MouseEvent } from 'react';
-import { SettingButtonParent } from './styles';
+import { IconButtonParent } from './styles';
 import { RegularText } from 'styling/common';
 import Icon from 'components/icon';
 import { useLink } from 'react-aria';
 import { useBaseProps } from 'hocs/base_component';
 
-export interface SettingsButtonProps {
+export interface IconButtonProps {
   image: string;
   text: string;
   alt: string;
@@ -13,7 +13,7 @@ export interface SettingsButtonProps {
   testid: string;
 }
 
-const SettingsButton = (props: SettingsButtonProps) => {
+const IconButton = (props: IconButtonProps) => {
   const { t, currentFont, currentSizes, currentTheme } = useBaseProps();
   const ref = useRef(null);
   const { linkProps } = useLink({}, ref);
@@ -25,7 +25,7 @@ const SettingsButton = (props: SettingsButtonProps) => {
   };
 
   return (
-    <SettingButtonParent href='#' {...linkProps} ref={ref} onClick={onClickCustom}>
+    <IconButtonParent href='#' {...linkProps} ref={ref} onClick={onClickCustom}>
       <RegularText
         data-testid={props.testid}
         $textSize={currentFont.regular_font_size}
@@ -39,8 +39,8 @@ const SettingsButton = (props: SettingsButtonProps) => {
         alt={alt}
         link={image}
       />
-    </SettingButtonParent>
+    </IconButtonParent>
   );
 };
 
-export default SettingsButton;
+export default IconButton;
