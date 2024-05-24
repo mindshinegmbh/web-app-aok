@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState, MouseEvent, useEffect } from 'react';
 import { CustomATag, LargeText, SmallText } from '../../styling/common';
 import withBase from 'hocs/base_page';
 import { useBaseProps } from 'hocs/base_component';
@@ -26,6 +26,9 @@ import {
   buttonAnimationTap,
   buttonAnimationTransition,
 } from 'utils/constants';
+import { sendPageEvent } from 'utils/analytics';
+import { Pages } from 'utils/custom_events';
+
 
 function SessionFinish() {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
@@ -33,13 +36,26 @@ function SessionFinish() {
   const [showFenster, setShowFenster] = useState(false);
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    sendPageEvent(Pages.session_finish, Pages.session_finish)
+  }, [])
+  
   const onClickFenster = (e: MouseEvent) => {
     e.preventDefault();
     setShowFenster(!showFenster);
   };
 
+  const sendFeedbackAndNavigate = () => {
+    navigate('/mental_gesundheit');
+  };
+
   return (
-    <SessionFinishParent $backgroundColor={currentTheme.colors.screen_background}>
+    <SessionFinishParent
+      role='main'
+      aria-roledescription='session finsish page'
+      $backgroundColor={currentTheme.colors.screen_background}
+    >
       <AnimatePresence>
         <LargeText
           $textSize={currentFont.large_font}
@@ -115,7 +131,7 @@ function SessionFinish() {
 
         <ButtonParent>
           <CustomButton
-            onClick={() => navigate('/mental_gesundheit')}
+            onClick={() => sendFeedbackAndNavigate()}
             text={t('session_finish.button')}
           />
         </ButtonParent>

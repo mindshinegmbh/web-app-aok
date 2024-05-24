@@ -24,6 +24,7 @@ const RadioButton = (props: RadioButtonProps) => {
       onClick={(e: MouseEvent) => onClickCheckbox(e)}
       href='#'
       $backgroundColor={currentTheme.colors.screen_background}
+      aria-selected={selected}
     >
       <Icon
         width={currentSizes.back.width}

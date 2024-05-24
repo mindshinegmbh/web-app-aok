@@ -21,7 +21,6 @@ interface CardProps {
 
 const CardComponent = (props: CardProps) => {
   const { currentTheme, currentFont } = useBaseProps();
-
   return (
     <CardParent $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>

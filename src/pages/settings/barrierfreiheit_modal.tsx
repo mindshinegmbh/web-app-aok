@@ -13,7 +13,7 @@ interface BarrierFreiheitModalProps {
 function BarrierFreiheitModal(props: BarrierFreiheitModalProps) {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
   return (
-    <Modal show={props.zeigen} onHide={props.versteckenModal}>
+    <Modal role="contentinfo" show={props.zeigen} onHide={props.versteckenModal}>
       <CloseParent>
         <CustomLink
           link={currentTheme.icons.close}

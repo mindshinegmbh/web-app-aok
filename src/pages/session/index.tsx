@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../localredux/hooks';
 import { SelectTransformedSessionData } from '../../localredux/session/selectors';
 import withBase from 'hocs/base_page';
@@ -14,6 +14,8 @@ import {
 import { useBaseProps } from 'hocs/base_component';
 import { useNavigate } from 'react-router-dom';
 import CardsPager from 'components/cards_pager';
+import { sendPageEvent } from 'utils/analytics';
+import { Pages } from 'utils/custom_events';
 
 function Session() {
   const { currentTheme } = useBaseProps();
@@ -21,6 +23,10 @@ function Session() {
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    sendPageEvent(Pages.session, Pages.session)
+  }, [])
   
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
@@ -38,18 +44,28 @@ function Session() {
   };
 
   return (
-    <MainContentParent $backgroundColor={currentTheme.colors.screen_background}>
+    <MainContentParent
+      role='main'
+      aria-roledescription='session cards'
+      $backgroundColor={currentTheme.colors.screen_background}
+    >
       <MainSwipeContainer ref={swiperRef}>
         <CardsPager total={sessionData?.cards?.length || 0} current={currentIndex + 1} />
 
         <MainSwipeChild style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {sessionData?.cards?.map((card, index) => (
-            <Slide key={index}>
+            <Slide
+              aria-label={'session no' + index + 1 + 'out of ' + sessionData?.cards?.length}
+              key={index}
+            >
               <CardComponent card={card} />
             </Slide>
           ))}
         </MainSwipeChild>
-        <BottomContentParent $backgroundColor={currentTheme.colors.screen_background}>
+        <BottomContentParent
+          aria-label='to navigate between session cards'
+          $backgroundColor={currentTheme.colors.screen_background}
+        >
           <BottomBar letfOnClick={() => slideLeft()} rightOnClick={() => slideRight()} />
         </BottomContentParent>
       </MainSwipeContainer>

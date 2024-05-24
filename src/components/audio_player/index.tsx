@@ -88,6 +88,8 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
           href='#'
           onClick={backwardAudio}
           transition={transitionStandard}
+          id="backward" 
+          aria-controls="audio"
         >
           <Circle
             $isLarge={currentFont.name === FONT_LARGE}
@@ -118,12 +120,14 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
             href='#'
             link={play ? currentTheme.icons.pause_button : currentTheme.icons.play_button}
             alt={'play'}
+            aria-controls="audio"
           />
           <audio
             onLoadedMetadata={setMetaData}
             onTimeUpdate={updateAudioProgress}
             src={url}
             ref={audioRef}
+            aria-controls="audio"
           />
         </motion.div>
         <CustomATag
@@ -133,6 +137,8 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
           href='#'
           onClick={forwardAudio}
           transition={transitionStandard}
+          id="forward" 
+          aria-controls="audio"
         >
           <Circle
             $isLarge={currentFont.name === FONT_LARGE}

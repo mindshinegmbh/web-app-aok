@@ -27,6 +27,7 @@ const CustomTextArea = (props: CustomTextAreaProps) => {
       $backgroundColor={currentTheme.colors.field_background_color}
       rows={10}
       placeholder={t(props.placeholder)}
+      aria-multiline={true}
     />
   );
 };

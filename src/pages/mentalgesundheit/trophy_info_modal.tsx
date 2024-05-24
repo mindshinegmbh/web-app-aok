@@ -13,7 +13,7 @@ interface TrophyInfoModalProps {
 function TrophyInfoModal(props: TrophyInfoModalProps) {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
   return (
-    <Modal show={props.show} onHide={props.hideModal}>
+    <Modal role="contentinfo" show={props.show} onHide={props.hideModal}>
       <CloseParent>
         <CustomLink
           link={currentTheme.icons.close}
