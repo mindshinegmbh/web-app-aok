@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'models/session_type';
 import { LargeText, SmallText } from 'styling/common';
 import { BodyTextParent, CardParent, CenterTextParent, UlParent } from './styles';
@@ -21,6 +21,7 @@ interface CardProps {
 
 const CardComponent = (props: CardProps) => {
   const { currentTheme, currentFont } = useBaseProps();
+  const [inputValueText, setInputValueText] = useState("")
   return (
     <CardParent $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>
@@ -68,6 +69,8 @@ const CardComponent = (props: CardProps) => {
             })}
           </UlParent>
           <InputsComponent
+            setTextInputValue={setInputValueText}
+            textInputValue={inputValueText}
             inputType={props.card.inputType}
             inputs={['First', 'Second', 'Third', 'Fourth']}
           />

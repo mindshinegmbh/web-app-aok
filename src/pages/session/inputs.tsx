@@ -15,6 +15,8 @@ import { motion } from 'framer-motion';
 interface InputProps {
   inputType: string;
   inputs: string[];
+  textInputValue: string;
+  setTextInputValue: (value: string) => void;
 }
 
 const InputsComponent = (props: InputProps) => {

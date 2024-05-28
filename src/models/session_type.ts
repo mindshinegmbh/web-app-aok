@@ -1,8 +1,8 @@
-import { NavigateFunction } from "react-router-dom";
+import { NavigateFunction } from 'react-router-dom';
 
 export interface GetSession {
   sessionId: number;
-  navigation: NavigateFunction
+  navigation: NavigateFunction;
 }
 
 export interface SessionSeverObject {
@@ -38,4 +38,26 @@ export interface Card {
   audio_url: string;
   inputs: [];
   inputType: string;
+}
+
+export interface SessionCardData {
+  sessionId: number;
+  inputs: InputData[];
+}
+
+export interface InputData {
+  id: number;
+  text: string;
+  checkbox: CheckboxInput[];
+  radios: RadioInput[];
+}
+
+export interface CheckboxInput {
+  id: number;
+  value: boolean;
+}
+
+export interface RadioInput {
+  id: number;
+  value: boolean;
 }

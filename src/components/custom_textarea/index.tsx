@@ -6,6 +6,8 @@ import { useBaseProps } from 'hocs/base_component';
 
 interface CustomTextAreaProps extends AriaTextFieldProps {
   placeholder: string;
+  value: string;
+  setValue: (value: string) => void;
 }
 
 const CustomTextArea = (props: CustomTextAreaProps) => {
@@ -19,6 +21,11 @@ const CustomTextArea = (props: CustomTextAreaProps) => {
     },
     ref,
   );
+
+  const onChangeText = (value: string) => {
+    props.setValue(value)
+  }
+
   return (
     <TextAreaParent
       {...inputProps}
@@ -28,6 +35,8 @@ const CustomTextArea = (props: CustomTextAreaProps) => {
       rows={10}
       placeholder={t(props.placeholder)}
       aria-multiline={true}
+      value={props?.value}
+      onChange={(event: React.ChangeEvent<{ value: string }>) => onChangeText(event.target.value)}
     />
   );
 };

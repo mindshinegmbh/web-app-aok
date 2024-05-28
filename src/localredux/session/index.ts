@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { SESSION } from '../constants';
 import { initialState } from './state';
-import { GetSession, SessionSeverObject } from 'models/session_type';
+import { GetSession, InputData, SessionSeverObject } from 'models/session_type';
 
 export const sessionSlice = createSlice({
   name: SESSION,
@@ -13,10 +13,14 @@ export const sessionSlice = createSlice({
     },
     setSessionData: (state, action: PayloadAction<SessionSeverObject>) => {
       state.session = action.payload;
-    }, 
+    },
+    setCardsData: (state, action: PayloadAction<InputData[]>) => {
+      const oldInputs = state.user_inputs;
+      state.user_inputs = [...oldInputs, ...action.payload];
+    },
   },
 });
 
-export const { getSessionData , setSessionData } = sessionSlice.actions;
+export const { getSessionData, setSessionData, setCardsData } = sessionSlice.actions;
 
 export default sessionSlice.reducer;
