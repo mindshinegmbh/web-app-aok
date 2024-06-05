@@ -5,6 +5,11 @@ export interface GetSession {
   navigation: NavigateFunction;
 }
 
+export interface SetCardsData {
+  inputData: InputData[];
+  navigation: NavigateFunction;
+}
+
 export interface SessionSeverObject {
   id: number;
   title: string;
@@ -13,6 +18,7 @@ export interface SessionSeverObject {
 }
 
 export interface CardServerObject {
+  id: number;
   session_id: number;
   title: string;
   text: string;
@@ -20,6 +26,7 @@ export interface CardServerObject {
   card_type: string;
   inputs: [];
   inputType: string;
+  inputId: number;
 }
 
 export interface Session {
@@ -38,6 +45,7 @@ export interface Card {
   audio_url: string;
   inputs: [];
   inputType: string;
+  inputId: number;
 }
 
 export interface SessionCardData {
@@ -46,18 +54,11 @@ export interface SessionCardData {
 }
 
 export interface InputData {
+  card_id: number;
+  session_id: number;
+  input_types: string;
   id: number;
   text: string;
-  checkbox: CheckboxInput[];
-  radios: RadioInput[];
-}
-
-export interface CheckboxInput {
-  id: number;
-  value: boolean;
-}
-
-export interface RadioInput {
-  id: number;
-  value: boolean;
+  checkbox: Map<number, boolean>;
+  radios: Map<number, boolean>;
 }

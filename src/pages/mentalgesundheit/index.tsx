@@ -264,7 +264,7 @@ function MentalGesundheit() {
           aria-roledescription='you can file in feedback here'
           role='form'
         >
-          <CustomTextArea placeholder={t('mental_gesundheit.feedback_placeholder')} />
+          <CustomTextArea setValue={() => {}} value='' placeholder={t('mental_gesundheit.feedback_placeholder')} />
         </FeedbackParent>
       )}
       {done && (

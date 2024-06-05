@@ -15,8 +15,7 @@ export const sessionSlice = createSlice({
       state.session = action.payload;
     },
     setCardsData: (state, action: PayloadAction<InputData[]>) => {
-      const oldInputs = state.user_inputs;
-      state.user_inputs = [...oldInputs, ...action.payload];
+      state.user_inputs = action.payload;
     },
   },
 });

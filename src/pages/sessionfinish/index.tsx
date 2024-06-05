@@ -28,10 +28,13 @@ import {
 } from 'utils/constants';
 import { sendPageEvent } from 'utils/analytics';
 import { Pages } from 'utils/custom_events';
+import { useAppSelector } from 'localredux/hooks';
+import { SelectInputData } from 'localredux/session/selectors';
 
 
 function SessionFinish() {
   const { currentFont, currentTheme, t, currentSizes } = useBaseProps();
+  const inputData = useAppSelector(SelectInputData);
   const [range, setRange] = useState(0);
   const [showFenster, setShowFenster] = useState(false);
   const navigate = useNavigate();
@@ -39,6 +42,7 @@ function SessionFinish() {
 
   useEffect(() => {
     sendPageEvent(Pages.session_finish, Pages.session_finish)
+    console.log(inputData)
   }, [])
   
   const onClickFenster = (e: MouseEvent) => {
@@ -125,7 +129,7 @@ function SessionFinish() {
             exit={ExitAnimationO}
             $showFenster={showFenster}
           >
-            <CustomTextArea placeholder={t('session_finish.feedback')} />
+            <CustomTextArea setValue={()=> {}} value='hskls' placeholder={t('session_finish.feedback')} />
           </FeedbackParent>
         )}
 

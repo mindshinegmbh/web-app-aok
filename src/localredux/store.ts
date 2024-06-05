@@ -6,6 +6,10 @@ import themeReducer from './theme';
 import sessionReducer from './session';
 import sagas from './sagas';
 
+import { enableMapSet } from 'immer'
+
+enableMapSet()
+
 const sagaMiddleware = createSagaMiddleware();
 
 const persistConfig = {

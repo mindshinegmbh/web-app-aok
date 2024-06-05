@@ -9,7 +9,6 @@ export function useBaseProps() {
   const currentFont = useContext(FontContext);
   const currentSizes = useContext(ImageSizesContext);
   const { t } = useTranslation();
-  
 
-  return { currentTheme, currentFont, dispatch , t  , currentSizes};
+  return { currentTheme, currentFont, dispatch, t, currentSizes };
 }
