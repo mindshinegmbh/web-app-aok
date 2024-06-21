@@ -1,6 +1,5 @@
 import React from 'react';
 import type { AriaTextFieldProps } from 'react-aria';
-import { useTextField } from 'react-aria';
 import { TextAreaParent } from './styles';
 import { useBaseProps } from 'hocs/base_component';
 import { InputData } from 'models/session_type';
