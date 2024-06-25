@@ -1,3 +1,5 @@
+import Colors from "styling/color";
+
 export const InputType = {
   text: 'text',
   checkbox: 'checkbox',
@@ -98,3 +100,31 @@ export const buttonAnimationHover = {
 export const buttonAnimationHoverCircle = {
   scale: 1.1,
 };
+
+
+export const colorsArray = [
+  {
+    id: 1,
+    color: Colors.theme_color_1,
+  },
+  {
+    id: 2,
+    color: Colors.theme_color_2,
+  },
+  {
+    id: 3,
+    color: Colors.theme_color_3,
+  },
+  {
+    id: 4,
+    color: Colors.theme_color_4,
+  },
+  {
+    id: 5,
+    color: Colors.theme_color_5,
+  },
+  {
+    id: 6,
+    color: Colors.theme_color_6,
+  },
+];

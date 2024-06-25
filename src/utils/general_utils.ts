@@ -1,12 +1,28 @@
 import Themes, { DARK, FONT_LARGE, FONT_REGULAR, Fonts, LIGHT } from '../styling/themes';
 
-export const getThemeObjectAgaisntString = (theme: string) => {
-  if (theme === LIGHT) return Themes.light;
-  if (theme === DARK) return Themes.dark;
-
-  return Themes.light;
+export const getThemeColor = (color: number) => {
+  switch (color) {
+    case 1:
+      return Themes.blueTheme;
+    case 2:
+      return Themes.yellowTheme;
+    case 3:
+      return Themes.purpleTheme;
+    case 4:
+      return Themes.greyTheme;
+    case 4:
+      return Themes.pinkTheme;
+    default:
+      return Themes.greenTheme;
+  }
 };
 
+export const getThemeObjectAgaisntString = (theme: string, color: number) => {
+  if (theme === LIGHT) return getThemeColor(color).light;
+  if (theme === DARK) return getThemeColor(color).dark;
+
+  return getThemeColor(color).light;
+};
 
 export const getFontObjectAgaisntString = (font: string) => {
   if (font === FONT_REGULAR) return Fonts.regular;
@@ -14,7 +30,6 @@ export const getFontObjectAgaisntString = (font: string) => {
 
   return Fonts.regular;
 };
-
 
 export const formatTimeForAudio = (time: number) => {
   const minutes = Math.floor(time / 60);
