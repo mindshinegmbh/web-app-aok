@@ -1,8 +1,13 @@
-import { NavigateFunction } from "react-router-dom";
+import { NavigateFunction } from 'react-router-dom';
 
 export interface GetSession {
   sessionId: number;
-  navigation: NavigateFunction
+  navigation: NavigateFunction;
+}
+
+export interface SetCardsData {
+  inputData: InputData[];
+  navigation: NavigateFunction;
 }
 
 export interface SessionSeverObject {
@@ -13,6 +18,7 @@ export interface SessionSeverObject {
 }
 
 export interface CardServerObject {
+  id: number;
   session_id: number;
   title: string;
   text: string;
@@ -20,6 +26,7 @@ export interface CardServerObject {
   card_type: string;
   inputs: [];
   inputType: string;
+  inputId: number;
 }
 
 export interface Session {
@@ -38,4 +45,20 @@ export interface Card {
   audio_url: string;
   inputs: [];
   inputType: string;
+  inputId: number;
+}
+
+export interface SessionCardData {
+  sessionId: number;
+  inputs: InputData[];
+}
+
+export interface InputData {
+  card_id: number;
+  session_id: number;
+  input_types: string;
+  id: number;
+  text: string;
+  checkbox: Map<number, boolean>;
+  radios: Map<number, boolean>;
 }

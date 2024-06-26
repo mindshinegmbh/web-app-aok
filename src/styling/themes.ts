@@ -1,54 +1,17 @@
 import { createContext } from 'react';
-import Colors from './color';
-import {
-  back_dark,
-  back_light,
-  settings_light,
-  right_arrow_dark,
-  right_arrow_light,
-  disabled_switch_dark,
-  disabled_switch_light,
-  enabled_switch_dark,
-  enabled_switch_light,
-  play_light,
-  pause_light,
-  pause_dark,
-  play_dark,
-  bottom_left_light,
-  bottom_right_light,
-  bottom_left_dark,
-  bottom_right_dark,
-  checkbox_selected_dark,
-  checkbox_selected_light,
-  checkbox_unselected_dark,
-  checkbox_unselected_light,
-  radiobutton_selected_dark,
-  radiobutton_selected_light,
-  radiobutton_unselected_dark,
-  radiobutton_unselected_light,
-  session_finish_dark,
-  session_finish_light,
-  info_dark,
-  info_light,
-  badge_1_dark,
-  badge_1_light,
-  badge_2_dark,
-  badge_2_light,
-  badge_3_dark,
-  badge_3_light,
-  badge_4_dark,
-  badge_4_light,
-  close_dark,
-  close_light,
-  settings_dark,
-} from '../images';
+import { ThemesVersionPink } from './pinktheme';
+import { ThemesVersionBlue } from './bluetheme';
+import { ThemesVersionPurple } from './purpletheme';
+import { ThemesVersionGreen } from './greentheme';
+import { ThemesVersionYellow } from './yellowtheme';
+import { ThemesVersionGrey } from './greytheme';
 
 export const DARK = 'dark';
 export const LIGHT = 'light';
 export const FONT_LARGE = 'large';
 export const FONT_REGULAR = 'regular';
 
-interface FontSizes {
+export interface FontSizes {
   name: string;
   regular_font_size: string;
   xsmall_font_size: string;
@@ -58,7 +21,7 @@ interface FontSizes {
   xlarge_font: string;
 }
 
-interface FontVersion {
+export interface FontVersion {
   large: FontSizes;
   regular: FontSizes;
 }
@@ -83,7 +46,7 @@ export const Fonts: FontVersion = {
     xlarge_font: '30px',
   },
 };
-interface ColorType {
+export interface ColorType {
   screen_background: string;
   element_background: string;
   primary_text_color: string;
@@ -165,113 +128,31 @@ export interface ThemeValuesType {
   icons: IconType;
 }
 
-interface ThemeType {
+export interface ThemeType {
   light: ThemeValuesType;
   dark: ThemeValuesType;
 }
 
-const Themes: ThemeType = {
-  light: {
-    name: LIGHT,
-    colors: {
-      screen_background: Colors.green_shade_0,
-      element_background: Colors.white_shade_0,
-      primary_text_color: Colors.white_shade_0,
-      secondary_text_color: Colors.grey_shade_0,
-      settings_text_color: Colors.green_shade_3,
-      header_text_color: Colors.green_shade_1,
-      settings_button_color: Colors.green_shade_4,
-      audio_player_background: Colors.white_shade_0,
-      forward_backward_background: Colors.white_shade_0,
-      forward_backward_bordercolor: Colors.green_shade_0,
-      audio_player_text_color: Colors.green_shade_0,
-      progress_bar_color: Colors.green_shade_0,
-      uncompleted_bar_color: Colors.grey_shade_1,
-      all_white_color: Colors.white_shade_0,
-      text_field_place_holder: Colors.green_shade_6,
-      field_background_color: Colors.white_shade_0,
-      button_background: Colors.green_shade_4,
-      button_text: Colors.green_shade_6,
-      range_bar: Colors.green_shade_4,
-      gesundheit_link_color: Colors.green_shade_4,
-      modal_text: Colors.green_shade_6,
-      pager_background: Colors.white_shade_0,
-      pager_border: Colors.white_shade_0,
-      pager_dot_active: Colors.green_shade_3,
-      pager_dot_inactive: Colors.grey_shade_2,
-    },
-    icons: {
-      back: back_light,
-      settings: settings_light,
-      right_arrow: right_arrow_light,
-      disabled_switch: disabled_switch_light,
-      enabled_switch: enabled_switch_light,
-      play_button: play_light,
-      pause_button: pause_light,
-      bottom_bar_left: bottom_left_light,
-      bottom_bar_right: bottom_right_light,
-      checkbox_selected: checkbox_selected_light,
-      checkbox_unselected: checkbox_unselected_light,
-      radiobutton_selected: radiobutton_selected_light,
-      radiobutton_unselected: radiobutton_unselected_light,
-      session_finish: session_finish_light,
-      info: info_light,
-      badges: [badge_1_light, badge_2_light, badge_3_light, badge_4_light],
-      close: close_light,
-    },
-  },
-  dark: {
-    name: DARK,
-    colors: {
-      screen_background: Colors.black_shade_0,
-      element_background: Colors.white_shade_0,
-      primary_text_color: Colors.white_shade_0,
-      secondary_text_color: Colors.grey_shade_0,
-      settings_text_color: Colors.green_shade_4,
-      header_text_color: Colors.green_shade_1,
-      settings_button_color: Colors.green_shade_4,
-      audio_player_background: Colors.green_shade_5_opaque,
-      forward_backward_background: Colors.green_shade_5_opaque,
-      forward_backward_bordercolor: Colors.green_shade_4,
-      audio_player_text_color: Colors.green_shade_4,
-      progress_bar_color: Colors.green_shade_4,
-      uncompleted_bar_color: Colors.grey_shade_1,
-      all_white_color: Colors.white_shade_0,
-      text_field_place_holder: Colors.green_shade_6,
-      field_background_color: Colors.green_shade_5_opaque,
-      button_background: Colors.green_shade_4,
-      button_text: Colors.green_shade_6,
-      range_bar: Colors.green_shade_4,
-      gesundheit_link_color: Colors.green_shade_4,
-      modal_text: Colors.green_shade_6,
-      pager_background: Colors.black_shade_0,
-      pager_border: Colors.green_shade_0,
-      pager_dot_active: Colors.green_shade_4,
-      pager_dot_inactive: Colors.grey_shade_2,
-    },
-    icons: {
-      back: back_dark,
-      settings: settings_dark,
-      right_arrow: right_arrow_dark,
-      disabled_switch: disabled_switch_dark,
-      enabled_switch: enabled_switch_dark,
-      pause_button: pause_dark,
-      play_button: play_dark,
-      bottom_bar_left: bottom_left_dark,
-      bottom_bar_right: bottom_right_dark,
-      checkbox_selected: checkbox_selected_dark,
-      checkbox_unselected: checkbox_unselected_dark,
-      radiobutton_selected: radiobutton_selected_dark,
-      radiobutton_unselected: radiobutton_unselected_dark,
-      session_finish: session_finish_dark,
-      info: info_dark,
-      badges: [badge_1_dark, badge_2_dark, badge_3_dark, badge_4_dark],
-      close: close_dark,
-    },
-  },
-};
+export interface ColorThemeType {
+  pinkTheme: ThemeType
+  purpleTheme: ThemeType
+  greenTheme: ThemeType
+  yellowTheme: ThemeType
+  blueTheme: ThemeType
+  greyTheme: ThemeType
+}
 
-export const ThemeContext = createContext(Themes.light);
+const Themes: ColorThemeType = {
+  pinkTheme: ThemesVersionPink,
+  purpleTheme: ThemesVersionPurple,
+  greenTheme: ThemesVersionGreen,
+  yellowTheme: ThemesVersionYellow,
+  blueTheme: ThemesVersionBlue,
+  greyTheme: ThemesVersionGrey
+}
+
+
+export const ThemeContext = createContext(Themes.yellowTheme.light);
 export const FontContext = createContext(Fonts.regular);
 export const ImageSizesContext = createContext(ImageSizes);
 

@@ -13,9 +13,12 @@ export const themeSlice = createSlice({
     setFont: (state, action: PayloadAction<string>) => {
       state.font = action.payload;
     }, 
+    setThemeColor:  (state, action: PayloadAction<number>) => {
+      state.idColor = action.payload;
+    }
   },
 });
 
-export const { setTheme , setFont } = themeSlice.actions;
+export const { setTheme , setFont, setThemeColor } = themeSlice.actions;
 
 export default themeSlice.reducer;

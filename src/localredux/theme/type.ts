@@ -1,4 +1,5 @@
 export interface ThemeState {
   theme: string;
-  font: string
+  font: string;
+  idColor: number;
 }

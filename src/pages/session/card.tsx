@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card } from 'models/session_type';
+import React, { useState } from 'react';
+import { Card, InputData } from 'models/session_type';
 import { LargeText, SmallText } from 'styling/common';
 import { BodyTextParent, CardParent, CenterTextParent, UlParent } from './styles';
 import AudioPlayer from 'components/audio_player';
@@ -17,10 +17,13 @@ import {
 
 interface CardProps {
   card: Card;
+  setSelectedInputValues: (draft: (input: InputData[]) => void) => void;
+  selectedInputValues: InputData[]
 }
 
 const CardComponent = (props: CardProps) => {
   const { currentTheme, currentFont } = useBaseProps();
+  const [inputValueText, setInputValueText] = useState("")
   return (
     <CardParent $backgroundColor={currentTheme.colors.screen_background}>
       <AnimatePresence>
@@ -68,8 +71,14 @@ const CardComponent = (props: CardProps) => {
             })}
           </UlParent>
           <InputsComponent
+            setTextInputValue={setInputValueText}
+            textInputValue={inputValueText}
             inputType={props.card.inputType}
             inputs={['First', 'Second', 'Third', 'Fourth']}
+            inputId={props.card.inputId}
+            setSelectedInputValues={props.setSelectedInputValues}
+            cardId={props.card.id}
+            selectedInputValues={props.selectedInputValues}
           />
         </CenterTextParent>
       </AnimatePresence>

@@ -16,8 +16,9 @@ function Home() {
   const { currentFont, currentTheme } = useBaseProps();
   const navigation = useNavigate();
   const dispatch = useAppDispatch();
+  
   useEffect(() => {
-    sendPageEvent(Pages.home, Pages.home)
+    sendPageEvent(Pages.home, Pages.home);
     dispatch(getSessionData({ sessionId: 23, navigation }));
   });
 

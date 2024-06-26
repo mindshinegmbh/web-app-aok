@@ -16,23 +16,49 @@ import { useNavigate } from 'react-router-dom';
 import CardsPager from 'components/cards_pager';
 import { sendPageEvent } from 'utils/analytics';
 import { Pages } from 'utils/custom_events';
+import { useImmer } from 'use-immer';
+import { InputData } from 'models/session_type';
+import { setCardsData } from 'localredux/session';
 
 function Session() {
-  const { currentTheme } = useBaseProps();
+  const { currentTheme, dispatch } = useBaseProps();
   const [currentIndex, setCurrentIndex] = useState(0);
   const sessionData = useAppSelector(SelectTransformedSessionData);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  
+  const [selectedInputValues, setSelectedInputValues] = useImmer<InputData[]>([]);
+
   useEffect(() => {
-    sendPageEvent(Pages.session, Pages.session)
-  }, [])
-  
+    sendPageEvent(Pages.session, Pages.session);
+  }, []);
+
+  useEffect(() => {
+    sessionData?.cards?.forEach((card) => {
+      const inputId = card.inputId;
+      const inputType = card.inputType;
+      const cardId = card.id;
+      const sessionId = sessionData?.id;
+      const inputObject = {
+        card_id: cardId,
+        session_id: sessionId,
+        input_types: inputType,
+        id: inputId,
+        text: '',
+        checkbox: new Map(),
+        radios: new Map(),
+      };
+      setSelectedInputValues((draft) => {
+        draft.push(inputObject);
+      });
+    });
+  }, []);
+
   const slideRight = () => {
     const cardsNumber = sessionData?.cards?.length || 0;
     if (currentIndex < cardsNumber - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
+      saveData();
       navigate('/session_finish');
     }
   };
@@ -43,6 +69,9 @@ function Session() {
     }
   };
 
+  const saveData = () => {
+    dispatch(setCardsData(selectedInputValues));
+  };
   return (
     <MainContentParent
       role='main'
@@ -58,7 +87,7 @@ function Session() {
               aria-label={'session no' + index + 1 + 'out of ' + sessionData?.cards?.length}
               key={index}
             >
-              <CardComponent card={card} />
+              <CardComponent selectedInputValues={selectedInputValues} setSelectedInputValues={setSelectedInputValues} card={card} />
             </Slide>
           ))}
         </MainSwipeChild>

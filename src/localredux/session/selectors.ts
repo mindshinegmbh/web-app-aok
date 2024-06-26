@@ -3,18 +3,20 @@ import { RootState } from '../store';
 import { Card, Session } from 'models/session_type';
 
 export const SelectSessionData = (state: RootState) => state.session.session;
+export const SelectInputData = (state: RootState) => state.session.user_inputs;
 
 export const SelectTransformedSessionData = createSelector(SelectSessionData, (data) => {
     const cards: Card[] | undefined = data?.cards?.map((value) => {
         const card: Card = {
-            id: value.session_id,
+            id: value.id,
             title: value.title,
             body: value.text,
             bullet: ["Hello" , "Another Hello"],
             cardType: value.card_type,
             audio_url: value.audio_file,
             inputs: value.inputs,
-            inputType: value.inputType
+            inputType: value.inputType,
+            inputId: value.session_id
         }
         return card
     })
