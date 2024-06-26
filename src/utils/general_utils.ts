@@ -18,6 +18,7 @@ export const getThemeColor = (color: number) => {
 };
 
 export const getThemeObjectAgaisntString = (theme: string, color: number) => {
+  console.log(getThemeColor(color).light.colors.screen_background)
   if (theme === LIGHT) return getThemeColor(color).light;
   if (theme === DARK) return getThemeColor(color).dark;
 

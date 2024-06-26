@@ -3,7 +3,7 @@ import { Route, Routes, useSearchParams } from 'react-router-dom';
 import Home from 'pages/home';
 import { ThemeContext, FontContext } from './styling/themes';
 import { useAppSelector } from './localredux/hooks';
-import { SelectFont, SelectTheme } from './localredux/theme/selectors';
+import { SelectColor, SelectFont, SelectTheme } from './localredux/theme/selectors';
 import { getFontObjectAgaisntString, getThemeObjectAgaisntString } from './utils/general_utils';
 import Settings from 'pages/settings';
 import Session from 'pages/session';
@@ -15,9 +15,10 @@ import { setThemeColor } from 'localredux/theme';
 function App() {
   const theme = useAppSelector(SelectTheme);
   const font = useAppSelector(SelectFont);
+  const idColor = useAppSelector(SelectColor);
   const [searchParams] = useSearchParams();
   const dispatch = useAppDispatch();
-  const color = Number(searchParams.get('color')) | 1;
+  const color = Number(searchParams.get('color')) | idColor;
   useEffect(() => {
     dispatch(setThemeColor(color));
   });

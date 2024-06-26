@@ -152,7 +152,7 @@ const Themes: ColorThemeType = {
 }
 
 
-export const ThemeContext = createContext(Themes.pinkTheme.light);
+export const ThemeContext = createContext(Themes.yellowTheme.light);
 export const FontContext = createContext(Fonts.regular);
 export const ImageSizesContext = createContext(ImageSizes);
 

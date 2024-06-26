@@ -33,7 +33,6 @@ function Session() {
   }, []);
 
   useEffect(() => {
-    console.log("called")
     sessionData?.cards?.forEach((card) => {
       const inputId = card.inputId;
       const inputType = card.inputType;
